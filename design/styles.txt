@@ -1,0 +1,71 @@
+Os dejo por aquí los estilos más genéricos:
+
+Tipografías:
+Ubuntu - 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+regla CSS para la tipo:
+font-family: 'Ubuntu', sans-serif;
+
+Pesos usados:
+300 y 500 (también están incluidos en el link los 400 y 700 por si acaso)
+
+H1:
+Size - 40px
+Weight - 500
+
+H2:
+Size - 25px
+Weight - 500
+
+H3:
+Size - 16px
+Weight - 500
+
+p:
+size - 13/16px
+Weight - 300
+
+
+--------------------------------------------
+
+Colores:
+
+Negro (no es negro del todo): #242424
+Rojo (para los errores de los formularios sobre todo) : #E05959
+Azul : #0197F6
+
+--------------------------------------------
+
+Border radius:
+Cajas cuadradas : 5px;
+Botones: 40px
+
+Borders:
+Fino: 1px
+Gordo: 3px - ??
+
+---------------------------------------------
+
+Botones grandes:
+Padding left y right: Lo que dé
+Padding top y bottom: 28px;
+
+Botones pequeños:
+Padding left y right: 35px
+Padding top y bottom: 15px;
+
+:hover :
+botones azules
+opacity: 0.6
+
+botones negros
+opacity: 0.8
+
+
+
+
+
+
+
