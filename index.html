@@ -4,9 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Wizard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sliderStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Adidos Shop</title>
 </head>
+<header>
+    <img id='logo' src='design/Adidos_logo.png'>
+</header>
 <body>
-    
+    <main>
+        <div class='mainDivs' id="mainDiv">
+            <section id="imgSection">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <img src="img/Blaca_Front.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img/Blaca_Back.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img/Blaca_Left.jpg" style="width:100%">
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                    </div>
+            </section>
+            <section id="contentSection">
+                <div id="contentDiv">
+                    <div id="text1Div">
+                        <h1> Camiseta</h1>
+                        <p>Descripción producto</p>
+                        <h3>Price</h3>
+                        <h2>100€ o mas</h2>
+                    </div>
+                    
+                    <div id="text2Div">
+                        <h3>Size</h3>
+                        <select name="size" id="sizeSelect">
+                            <option value="XL">XL</option>
+                            <option value="L">L</option>
+                            <option value="S">S</option>
+                            <option value="M">XL</option>
+                            <option value="XL">XL</option>
+                        </select>
+                        <h3>Color</h3>
+                    </div>
+                </div>                
+            </section>
+        </div>
+        <!-- <div> </div> -->
+        <div class='mainDivs' id="step1Div" display='none'>
+            <section>
+
+            </section>
+            <section>
+
+            </section>
+        </div>
+        <div class='mainDivs' id="step2Div" display='none'>
+            <section>
+
+            </section>
+            <section>
+
+            </section>
+        </div>
+        <div class='mainDivs' id="step3Div" display='none'>
+            <section>
+
+            </section>
+            <section>
+
+            </section>
+        </div>
+        <div class='mainDivs' id="step4Div" display='none'>
+            <section>
+
+            </section>
+            <section>
+
+            </section>
+        </div>
+
+        <div class='mainDivs' id="lastStepDiv" display='none'>
+            <section>
+
+            </section>
+            <section>
+
+            </section>
+        </div>
+    </main>
+    <script src="slider.js"></script>
 </body>
+<footer>
+
+</footer>
+
 </html>
