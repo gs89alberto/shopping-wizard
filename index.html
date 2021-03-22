@@ -90,37 +90,40 @@
         </div>
         <div class='mainDivs' id="step3Div" display='none'>
             <section id="imgSection">
-                <h1>Shipping</h1><br></br>
-                <h2>Shipping type</h2>
-                <div id="radioOptions">
-                    <input type="radio" id="opt1" name="shippingType" value="opt1">
-                    <label for="opt1">Free shipment (72H)</label><br></br>
+                <form action="index.html" method="post">
+                    <h1>Shipping</h1><br></br>
+                    <h2>Shipping type</h2>
+                    <div id="radioOptions">
+                        <input type="radio" id="opt1" name="shippingType" value="opt1">
+                        <label for="opt1">Free shipment (72H)</label><br></br>
 
-                    <input type="radio" id="opt2" name="shippingType" value="opt2">
-                    <label for="opt2">Extra shipping (48H) <a style="font-weight: bold;">4,99€<a></label><br></br>
+                        <input type="radio" id="opt2" name="shippingType" value="opt2">
+                        <label for="opt2">Extra shipping (48H) <a style="font-weight: bold;">4,99€<a></label><br></br>
 
-                    <input type="radio" id="opt3" name="shippingType" value="opt3">
-                    <label for="opt3">Premium (24h) <a style="font-weight: bold;">9,99€</a></label>
-                </div>
-            
-                <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
-                <label for="giftCheckbox">Is it a gift</label><br></br>
-                <div id="giftContent">
-                    <label>Gift message</label><br></br>
-                    <textarea name="textBox" id="textBox" rows="10" cols="35" disabled></textarea>
+                        <input type="radio" id="opt3" name="shippingType" value="opt3">
+                        <label for="opt3">Premium (24h) <a style="font-weight: bold;">9,99€</a></label>
+                    </div>
                 
-                    <br></br>
-                    <label>Gift weapper image</label><br></br>
-                    <input type="file" name="imageInput" id="imageInput" accept="image/*" disabled>
-                </div>
+                    <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
+                    <label for="giftCheckbox">Is it a gift</label><br></br>
+                    <div id="giftContent">
+                        <label>Gift message</label><br></br>
+                        <textarea name="textBox" id="textBox" rows="10" cols="35" disabled></textarea>
+                    
+                        <br></br>
+                        <label>Gift weapper image</label><br></br>
+                        <input type="file" name="imageInput" id="imageInput" accept="image/*" disabled><br></br>
+                    </div>
+                    <div class="formButtons">
+                        <button type="reset">Clear form</button>
+                        <button type="submit">Next</button>
+                    </div>
+                </form>
             </section>
             <section id="contentSection">
                 
             </section>
-            <div class="formButtons">
-                <button>Clear form</button>
-                <button>Next</button>
-            </div>
+            
         </div>
         <div class='mainDivs' id="step4Div" display='none'>
             <section>
