@@ -15,7 +15,7 @@
 </header>
 <body>
     <main>
-        <div class='mainDivs' id="mainDiv">
+        <div class='mainDivs' id="mainDiv" style="display: none;">
             <section id="imgSection">
                 <div class="slideshow-container">
 
@@ -45,14 +45,14 @@
             </section>
             <section id="contentSection">
                 <div id="contentDiv">
-                    <div id="text1Div">
+                    <div>
                         <h1> Camiseta</h1>
                         <p>Descripción producto</p>
                         <h3>Price</h3>
                         <h2>100€ o mas</h2>
                     </div>
                     
-                    <div id="text2Div">
+                    <div>
                         <h3>Size</h3>
                         <select name="size" id="sizeSelect">
                             <option value="XL">XL</option>
@@ -89,12 +89,38 @@
             </section>
         </div>
         <div class='mainDivs' id="step3Div" display='none'>
-            <section>
+            <section id="imgSection">
+                <h1>Shipping</h1><br></br>
+                <h2>Shipping type</h2>
+                <div id="radioOptions">
+                    <input type="radio" id="opt1" name="shippingType" value="opt1">
+                    <label for="opt1">Free shipment (72H)</label><br></br>
 
-            </section>
-            <section>
+                    <input type="radio" id="opt2" name="shippingType" value="opt2">
+                    <label for="opt2">Extra shipping (48H) <a style="font-weight: bold;">4,99€<a></label><br></br>
 
+                    <input type="radio" id="opt3" name="shippingType" value="opt3">
+                    <label for="opt3">Premium (24h) <a style="font-weight: bold;">9,99€</a></label>
+                </div>
+            
+                <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
+                <label for="giftCheckbox">Is it a gift</label><br></br>
+                <div id="giftContent">
+                    <label>Gift message</label><br></br>
+                    <textarea name="textBox" id="textBox" rows="10" cols="35" disabled></textarea>
+                
+                    <br></br>
+                    <label>Gift weapper image</label><br></br>
+                    <input type="file" name="imageInput" id="imageInput" accept="image/*" disabled>
+                </div>
             </section>
+            <section id="contentSection">
+                
+            </section>
+            <div class="formButtons">
+                <button>Clear form</button>
+                <button>Next</button>
+            </div>
         </div>
         <div class='mainDivs' id="step4Div" display='none'>
             <section>
@@ -115,6 +141,7 @@
         </div>
     </main>
     <script src="slider.js"></script>
+    <script src="functions.js"></script>
 </body>
 <footer>
 
