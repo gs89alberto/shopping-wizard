@@ -170,4 +170,17 @@ p {
     background-image: url('img/Verde_Front.jpg');
 }
 
+#textBox {
+    border: 2px solid #242424;
+    resize: none;
+}
 
+#radioOptions {
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.formButtons {
+    display: flex;
+    align-items: flex-end;
+}
