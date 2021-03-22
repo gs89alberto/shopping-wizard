@@ -1,0 +1,73 @@
+
+#contCentral{
+    margin-left: 2.5%;
+    font-family: 'Ubuntu', sans-serif;
+}
+h2{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.textoDeRellenar{
+    font-size: 13px;
+    font-weight: 300;
+    color: #242424;
+}
+.rellenar{
+    border: solid 2px #242424;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+select{
+    font-size: 13px;
+    font-weight: 300;
+    color: #242424;
+}
+
+#check{
+    font-size: 13px;
+    font-weight: 300;
+    color: #242424;
+}
+#checkItem{
+    float: left;
+    align-items: center;
+    margin-right: 5px;
+    margin-top: 4px;
+}
+
+#botones{
+    margin-left: 80%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+#btnClear{
+    border: #242424 solid 2px;
+    border-radius: 5px;
+    color: #242424;
+    font-weight: 200;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    margin-right: 15px;
+}
+#btnNext{
+    border: #242424 solid 2px;
+    border-radius: 5px;
+    color:azure;
+    font-size: 13px;
+    font-weight: 200;
+    background-color: #242424;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}

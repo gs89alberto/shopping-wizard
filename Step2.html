@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleStep2.css">
+    <link rel="stylesheet" href="sliderStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Adidos Shop</title>
+</head>
+<header>
+    <img id='logo' src='design/Adidos_logo.png'>
+</header>
+<body>
+    <main>
+        <form>
+        <div id="contCentral">
+            <h2>Address</h2><br>
+
+            <label for="firstName" class="textoDeRellenar">First Name</label><br>
+            <input type="text" name="firstName" size="20" class="rellenar"><br>
+
+            <label for="lastName" class="textoDeRellenar">Last Name</label><br>
+            <input type="text" name="lastName" size="20" class="rellenar"><br>
+
+            <label for="birthday" class="textoDeRellenar">Birthday</label><br>
+            <input type="date" name="birthday" class="rellenar"><br>
+
+            <label for="Address1" class="textoDeRellenar">Address 1</label><br>
+            <input type="text" name="Address1" class="rellenar"><br>
+
+            <label for="Address2" class="textoDeRellenar">Address 2</label><br>
+            <input type="text" name="Address2" class="rellenar"><br>
+
+            <label for="postalCode" class="textoDeRellenar">Postal Code</label><br>
+            <input type="number" name="portalCode" class="rellenar"><br>
+
+            <label for="country" class="textoDeRellenar">Country</label><br>
+            <select name="country" class="rellenar">
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Albania">Albania</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Bahamas">Bahamas</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Canada">Canada</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Djibouti">Djibouti</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Fiji">Fiji</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Greece">Greece</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Madagascar">Madagascar</option>
+                <option value="Maldives">Maldives</option>
+                <option value="Malta">Malta</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Monaco">Monaco</option>
+                <option value="Nepal">Nepal</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="North Korea">North Korea</option>
+                <option value="North Macedonia">North Macedonia</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Panama">Panama</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Romania">Romania</option>
+                <option value="Russia">Russia</option>
+                <option value="Samoa">Samoa</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="Spain">Spain</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Turkmenistan">Turkmenistan</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States of America">United States of America</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Vanuatu">Vanuatu</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+            </select><br>
+
+            <label for="numberPhone" class="textoDeRellenar">Phone</label><br>
+            <input type="tel" name="numberPhone" class="rellenar"><br>
+
+            <div id="check">
+                <input type="checkbox" name="RegularAddress" value="SaveRA" id="checkItem">
+                <p>This is my regular address</p><br>
+            </div>
+
+            <div id="botones">
+                <input type="reset" name="clear" value="Clear Form" id="btnClear">
+                <input type="submit" name="next" value="Next" id="btnNext">
+            </div>
+
+        </div>
+    </form>
+    </main>
+</body>
+<footer>
+
+</footer>
+</html>
