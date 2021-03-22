@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="step4style.css">
+    <link rel="stylesheet" href="sliderStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <title>Adidos Shop</title>
+</head>
+<body>
+    <header>
+        <img id='logo' src='design/Adidos_logo.png'>
+    </header>
+    <main>
+
+        <div id="topBar" class="topBar">
+
+<!-- PROGRESS BAR ---------------------------------- -->
+
+            <!-- <div id="progressBar" class="progressBar">
+                <div class="allProgressStep">
+                    <div class="step">
+                        <h4 class="completedText">Profile</h4>
+                        <p class="stepPoint completed" ></p>
+                    </div>
+                    <div class="step">
+                        <h4 class="completedText">Address</h4>
+                        <p class="stepPoint completed"></p>
+                    </div>
+                    <div class="step">
+                        <h4 class="completedText">Shipping</h4>
+                        <p class="stepPoint completed"></p>
+                    </div>
+                    <div class="step">
+                        <h4>Finish</h4>
+                        <p class="stepPoint"></p>
+                    </div>
+                </div> -->
+
+            <div id="progressBar" class="progressBar">
+                <div class="allProgressStep">
+                    <div class="step">
+                        <p class="stepPoint completed" >1</p>
+                        <h4 class="completedText">Profile</h4>
+                    </div>
+                    <div class="step">
+                        <p class="stepPoint completed">2</p>
+                        <h4 class="completedText">Address</h4>
+
+                    </div>
+                    <div class="step actualStep">
+                        <p class="stepPoint completed">3</p>
+                        <h4 class="completedText">Shipping</h4>
+                    </div>
+                    <div class="step">
+                        <p class="stepPoint">4</p>
+                        <h4>Finish</h4>
+                    </div>
+                </div>
+            </div>
+
+<!-- END OF PROGRESS BAR ---------------------------------- -->
+
+<!-- POP UP HURRY UP MESSAGE ---------------------------------- -->
+
+            <div id="popUpDiv" class="popUpDiv hidden">
+                <p>Your purchase started:</p>
+                <p id="closeX" class="closeX" onclick="hide()">&#x2715</p>
+                <h3 id="timerPopUp">3 minutes ago.</h4>
+                <h2>Hurry Up!</h2>
+            </div>
+
+<!-- END POP UP HURRY UP MESSAGE ---------------------------------- -->
+
+        </div>
+
+<!-- STEP 4 (PURCHASE RESUME) ---------------------------------- -->
+
+        <div class='mainDivs' id="step4Div">
+            <section class="leftContent">
+                <h2 class="yourPurchaseText">Your Purchase</h2>
+                <div id="purchaseResume" class="purchaseResume">
+                    <div id="purchaseImg" class="purchaseImg"></div>
+                    <div class="purchaseContent">
+                        <h1 id="prodcutName" class="productName">Illegal shirt</h1>
+                        <p class="productDescription">Please don't accept imitations or illegal copies of the brand. Any of these would be very bad T-shirts. Take this advice seriously, please.</p>
+                        <div class="SizeColor">
+                            <div class="SCResumeDiv">
+                                <h3>Size</h3>
+                                <p class="sizeP">XS</p>
+                            </div>
+                            <div class="SCResumeDiv">
+                                <h3>Color</h3>
+                                <p class="colorP"></p>
+                            </div>
+                        </div>
+                        <h3 class="delDateTitle">Estimated delivery date:</h3>
+                        <p id="delDateText" class="delDateText">July 21st 2021</p>
+                    </div>
+                </div>
+            </section>
+            <section class="rightContent">
+                <h2 class="resumeText">Resume</h2>
+                <div id="totalResume">
+                    <div class="productAccount">
+                        <p class="productText">Nombre product</p>
+                        <h3 class="productPrice">100€</h3>
+                    </div>
+                    <div class="shippingAccount">
+                        <p class="shippingText">Premium Shipping</p>
+                        <h3 class="shippingPrice">9,99€</h3>
+                    </div>
+                </div>
+                <div class="totalPrice">
+                    <h2>Total</p>
+                    <h2>109,99€</h3>
+                </div>
+                <form>
+                    <!-- <input type="submit" value="Finish"> -->
+                    <button class="longBtn">Buy Now!</button>
+                    <input type="checkbox" name="conditions" id="conditions" required>
+                    <label for="conditions" class="checkboxText">I've read and accept the terms and conditions</label>
+                </form>
+            </section>
+        </div>
+
+<!-- END OF STEP 4 (PURCHASE RESUME) ---------------------------------- -->
+
+    </main>
+
+    <footer>
+    </footer>
+    <script src="closeXBtn.js"></script>
+</body>
+
+</html>
