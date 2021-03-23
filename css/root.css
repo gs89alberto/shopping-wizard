@@ -1,0 +1,389 @@
+/* RESET CSS ------------ */
+
+html,
+body,
+div,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+img,
+ol,
+ul,
+li,
+input,
+label,
+select,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+footer,
+header,
+menu,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  list-style: none;
+  border: 0;
+}
+
+/* END OF RESET CSS ------------- */
+
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #242424;
+}
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #242424;
+}
+
+h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #242424;
+}
+
+h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: #0197f6;
+}
+
+p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #242424;
+}
+
+select {
+  font-size: 16px;
+  font-weight: 300;
+  color: #242424;
+  font-family: "Ubuntu", sans-serif;
+}
+
+input {
+  font-family: "Ubuntu", sans-serif;
+  color: #242424;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+label {
+  font-family: "Ubuntu", sans-serif;
+  color: #242424;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+button {
+  border-radius: 40px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+header {
+  height: 90px;
+  width: 100%;
+  border-bottom: 1px solid #cdcdcd !important;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  font-family: "Ubuntu", sans-serif;
+  color: #242424;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+textarea {
+  font-family: "Ubuntu", sans-serif;
+  color: #242424;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #242424;
+  border-radius: 5px;
+  resize: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#logo {
+  height: auto;
+  width: 150px;
+  margin-left: 30px;
+}
+
+.mainDivs {
+  width: 100%;
+  display: flex;
+  margin-bottom: 200px;
+}
+
+footer {
+  height: 150px;
+  width: 100%;
+  background-color: #242424;
+  position: absolute;
+  bottom: 0;
+}
+
+.longBtn {
+  width: 100%;
+  background-image: linear-gradient(32deg, #04b2e4, #008aff);
+  padding: 25px 0px 25px 0px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.longBtn:hover {
+  opacity: 0.6;
+}
+
+.longBtn:focus {
+  outline: none;
+}
+
+/* TOP BAR STYLES --------------- */
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+}
+
+/* PROGRESS BAR 2 ----------------------- */
+
+.progressBar {
+  width: max-content;
+  position: relative;
+  top: -2px;
+  margin-bottom: 100px;
+}
+
+.allProgressStep {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.step {
+  width: max-content;
+  height: 45px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 0px 0px;
+  border-top: 4px solid transparent;
+}
+
+.actualStep {
+  border-top: 4px solid #0197f6;
+}
+
+.stepPoint {
+  margin-bottom: 0;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #0197f6;
+  border-radius: 40px;
+  text-align: center;
+  line-height: 28px;
+  margin-right: 10px;
+  color: #0197f6;
+}
+
+.completedText {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.completed {
+  background-color: #0197f6;
+  color: white;
+  font-weight: 500;
+}
+
+/* POP UP HURRY UP STYLES ---------------------- */
+
+.popUpDiv {
+  margin-top: 10px;
+  width: 260px;
+  height: 120px;
+  background-image: linear-gradient(32deg, #04b2e4, #008aff);
+  border-radius: 5px;
+  position: relative;
+  transition: 0.6s;
+  overflow: hidden;
+}
+
+.popUpDiv p {
+  display: inline-block;
+  margin: 15px 0px 3px 15px;
+  color: white;
+}
+
+.closeX {
+  margin: 0 !important;
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  cursor: pointer;
+}
+
+.popUpDiv h3 {
+  margin-left: 15px;
+  color: white;
+}
+
+.popUpDiv h2 {
+  color: white;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.hidden {
+  height: 0px;
+  opacity: 0;
+}
+
+.hidden_div {
+  display: none;
+}
+
+/* GENERAL STYLES FOR FORM STEPS----------------------- */
+
+.leftContent {
+  width: 70%;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.rightContent {
+  width: 30%;
+  margin-left: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+input[type="checkbox"] {
+  max-width: 15px;
+  min-height: 15px !important;
+  max-height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 0 !important;
+}
+
+input[type="radio"] {
+  max-width: 15px;
+  min-height: 15px !important;
+  max-height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+input[type="date"]:invalid {
+  color: rgb(59, 59, 59);
+}
+
+.select {
+  margin-bottom: 30px;
+}
+
+.formInputs input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 45px;
+  padding-left: 15px;
+  border: 1px solid #242424;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.formInputs input:last-child {
+  margin-bottom: 0;
+}
+
+.formInputs select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 45px;
+  padding-left: 15px;
+  border: 1px solid #242424;
+  border-radius: 5px;
+}
+
+.formSmallBtns button {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 15px 35px 15px 35px;
+  border: 3px solid #0197f6;
+}
+
+.formSmallBtns button:hover {
+  opacity: 0.8;
+}
+
+.formSmallBtns button:focus {
+  outline: none;
+}
+
+.clearBtn {
+  background-color: white;
+  color: #0197f6;
+  margin-right: 5px;
+}
+
+.nextBtn {
+  background-image: linear-gradient(32deg, #04b2e4, #008aff);
+  color: white;
+  margin-left: 5px;
+}

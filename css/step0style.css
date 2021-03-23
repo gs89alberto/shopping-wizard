@@ -1,0 +1,227 @@
+.step0MainDiv {
+  margin-top: 70px;
+}
+
+/* SLIDER STYLES ----------------- */
+
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  max-height: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev_arrow,
+.next_arrow {
+  width: 30px;
+  height: 30px;
+  left: 25px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  color: #242424;
+  font-weight: bold;
+  font-size: 25px;
+  transition: 0.6s ease;
+  border-radius: 40px;
+  user-select: none;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.prev_arrow {
+  background-image: url(../img/rsc/left_arrow.png);
+  background-size: contain;
+}
+
+.prev_arrow:focus,
+.next_arrow:focus {
+  outline: none;
+}
+
+.prev_arrow:hover,
+.next_arrow:hover {
+  opacity: 0.6;
+}
+
+/* Position the "next button" to the right */
+.next_arrow {
+  left: unset;
+  right: 25px;
+  background-image: url(../img/rsc/right_arrow.png);
+  background-size: contain;
+}
+
+.navBtns {
+  align-items: center;
+  width: max-content;
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  justify-content: center;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev_arrow,
+  .next_arrow,
+  .text {
+    font-size: 11px;
+  }
+}
+
+/* END OF SLIDER STYLES ------------------- */
+
+/* LEFT SECTION ---------------- */
+
+#imgSection {
+  width: 60%;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* RGIHT SECTION ---------------- */
+
+#contentSection {
+  width: 40%;
+  box-sizing: border-box;
+  margin-left: 15px;
+}
+
+#contentDiv {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.desc_text h1,
+.desc_text p,
+.desc_text h2 {
+  margin-bottom: 15px;
+}
+
+.desc_text h3 {
+  margin-bottom: 2px;
+}
+
+#sizeSelect {
+  width: 50%;
+  height: 50px;
+  margin-top: 5px;
+  border-bottom: 1px solid #242424;
+  border-left: 1px solid #242424;
+  padding-left: 5px;
+  margin-bottom: 15px;
+}
+
+.colorDivSelector {
+  margin-bottom: 25px;
+}
+
+.colorDivSelector h3 {
+  margin-bottom: 5px;
+}
+
+.colorButton {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #242424;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px;
+}
+#colorButton1 {
+  background-image: url("../img/Blaca_Front.jpg");
+}
+#colorButton2 {
+  background-image: url("../img/Azul_Front.jpg");
+}
+#colorButton3 {
+  background-image: url("../img/Negro_Front.jpg");
+}
+#colorButton4 {
+  background-image: url("../img/Rojo_Front.jpg");
+}
+#colorButton5 {
+  background-image: url("../img/Verde_Front.jpg");
+}
+
+.formButtons {
+  display: flex;
+  align-items: flex-end;
+}

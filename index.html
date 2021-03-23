@@ -4,182 +4,314 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="sliderStyle.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/step0style.css">
+    <link rel="stylesheet" href="css/step1style.css">
+    <link rel="stylesheet" href="css/step2style.css">
+    <link rel="stylesheet" href="css/step3style.css">
+    <link rel="stylesheet" href="css/step4style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <title>Adidos Shop</title>
 </head>
-<header>
-    <img id='logo' src='design/Adidos_logo.png'>
-</header>
 <body>
+    <header>
+        <img id='logo' src='design/Adidos_logo.png'>
+    </header>
     <main>
-        <div class='mainDivs' id="mainDiv" style="display: none;">
-            <section id="imgSection">
-                <div class="slideshow-container">
 
-                    <div class="mySlides fade">
-                      <img src="img/Blaca_Front.jpg" style="width:100%">
-                    </div>
-                    
-                    <div class="mySlides fade">
-                      <img src="img/Blaca_Back.jpg" style="width:100%">
-                    </div>
-                    
-                    <div class="mySlides fade">
-                      <img src="img/Blaca_Left.jpg" style="width:100%">
-                    </div>
-                    
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    
-                    </div>
-                    <br>
-                    
-                    <div style="text-align:center">
-                      <span class="dot" onclick="currentSlide(1)"></span> 
-                      <span class="dot" onclick="currentSlide(2)"></span> 
-                      <span class="dot" onclick="currentSlide(3)"></span> 
-                    </div>
-            </section>
-            <section id="contentSection">
-                <div id="contentDiv">
-                    <div>
-                        <h1> Camiseta</h1>
-                        <p>Descripción producto</p>
-                        <h3>Price</h3>
-                        <h2>100€ o mas</h2>
-                    </div>
-                    
-                    <div>
-                        <h3>Size</h3>
-                        <select name="size" id="sizeSelect">
-                            <option value="XL">XL</option>
-                            <option value="L">L</option>
-                            <option value="S">S</option>
-                            <option value="M">XL</option>
-                            <option value="XL">XL</option>
-                        </select>
-                        <h3>Color</h3>
-                        <button class='colorButton' id="colorButton1"></button>
-                        <button class='colorButton' id="colorButton2"></button>
-                        <button class='colorButton' id="colorButton3"></button>
-                        <button class='colorButton' id="colorButton4"></button>
-                        <button class='colorButton' id="colorButton5"></button>
-                    </div>
-                </div>                
-            </section>
+<!-- STEP 0 ------------------------ -->
+
+        <div class="mainDivs step0MainDiv" id="step0MainDiv">
+
+                <section id="imgSection">
+                    <div class="slideshow-container">
+
+                        <div class="mySlides fade">
+                        <img src="img/Blaca_Front.jpg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                        <img src="img/Blaca_Back.jpg" style="width:100%">
+                        </div>
+                        
+                        <div class="mySlides fade">
+                        <img src="img/Blaca_Left.jpg" style="width:100%">
+                        </div>
+                        
+                        <a class="prev_arrow" onclick="plusSlides(-1)"></a>
+                        <a class="next_arrow" onclick="plusSlides(1)"></a>
+                        
+                        </div>
+                        <br>
+                        
+                        <div class="navBtns" style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div>
+                </section>
+                <section id="contentSection">
+                    <div id="contentDiv">
+                        <div class="desc_text">
+                            <h1>Illegal shirt</h1>
+                            <p>Please don't accept imitations or illegal copies of the brand. Any of these would be very bad T-shirts. Take this advice seriously, please.</p>
+                            <h3>Price</h3>
+                            <h2>100€ or more</h2>
+                        </div>
+                        
+                        <div id="step0Form">
+                            <div class="sizeDivSelector">
+                                <h3>Size</h3>
+                                <select name="size" id="sizeSelect">
+                                    <option value="XL">XS</option>
+                                    <option value="L">S</option>
+                                    <option value="S">M</option>
+                                    <option value="M">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <div class="colorDivSelector">
+                                <h3>Color</h3>
+                                <button class='colorButton' id="colorButton1"></button>
+                                <button class='colorButton' id="colorButton2"></button>
+                                <button class='colorButton' id="colorButton3"></button>
+                                <button class='colorButton' id="colorButton4"></button>
+                                <button class='colorButton' id="colorButton5"></button>
+                            </div>
+                        
+                        <button id="addToCartBtn" class="longBtn">Add To Cart</button>
+                        </div>
+                    </div>                
+                </section>
+
         </div>
-        <!-- <div> </div> -->
-        <div class='mainDivs' id="step1Div" display='none'>
 
-            <div class="container">
-                <ul class="progressbar">
-                    <li class="active">Profile</li>
-                    <li class="active">Adress</li>
-                    <li >Shipping</li>
-                    <li >Finish</li>
-                </ul>
+<!-- END STEP 0 ------------------------ -->
+
+<!-- HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
+
+        <div id="topBar" class="topBar hidden" style="display: flex;">
+
+    <!-- PROGRESS BAR ---------------------------------- -->
+    
+            <div id="progressBar" class="progressBar">
+                <div class="allProgressStep">
+                    <div class="step">
+                        <p class="stepPoint completed" >1</p>
+                        <h4 class="completedText">Profile</h4>
+                    </div>
+                    <div class="step">
+                        <p class="stepPoint completed">2</p>
+                        <h4 class="completedText">Address</h4>
+
+                    </div>
+                    <div class="step actualStep">
+                        <p class="stepPoint completed">3</p>
+                        <h4 class="completedText">Shipping</h4>
+                    </div>
+                    <div class="step">
+                        <p class="stepPoint">4</p>
+                        <h4>Finish</h4>
+                    </div>
+                </div>
             </div>
+    
+    <!-- END OF PROGRESS BAR ---------------------------------- -->
+    
+    <!-- POP UP HURRY UP MESSAGE ---------------------------------- -->
+    
+            <div id="popUpDiv" class="popUpDiv hidden">
+                <p>Your purchase started:</p>
+                <p id="closeX" class="closeX" onclick="hide()">&#x2715</p>
+                <h3 id="timerPopUp">3 minutes ago.</h4>
+                <h2>Hurry Up!</h2>
+            </div>
+    
+    <!-- END POP UP HURRY UP MESSAGE ---------------------------------- -->
+    
+        </div>
+
+<!-- END HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
+
+<!-- STEP 1 ------------------------ -->
+
+        <div class="mainDivs hidden_div" id="step1MainDiv">
             
-            <section id="profile">
-                <h2>Step 1 - Profile</h2>
-                <div id="profilediv">
-                <form action="" method="post">
-                    <label for="name"></label>
-                    <input type="text" id="name" name="user" placeholder="User" required="required" pattern="[A-Za-z]{5,}" maxlength="20" title="Introduce a valid user name">
-                    <br />
-                    <label for="email"></label>
-                    <input type="email" id="email" name="email" placeholder="Email" required="required" maxlength="50"><br>
-                    <br />
-                    <label for="pwd"></label>
-                    <input type="password" id="pwd" name="pwd" placeholder="Password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}" maxlength="20" title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character">
-                    <br />
-                    <label for="pwdconfirm"></label>
-                    <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password" required="required">
-                    <br />
-                    <input type="submit" id="submit">
+            <form id="profileForm" class="profileForm">
+                <div class="leftContent">
+                    <h2 class="titleStep">Profile</h2>
+                    <div class="formInputsProfile formInputs">
+                        <input type="text" id="name" name="user" placeholder="Username*" required="required" pattern="[A-Za-z]{5,}" maxlength="20" title="Introduce a valid user name">
+                        <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50">
+                        <input type="password" id="pwd" name="pwd" placeholder="Password*" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}" maxlength="20" title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character">
+                        <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password*" required="required">
+                    </div>
+                </div>
+                <div class="rightContent prf_rc formSmallBtns">
+                    <button type="reset" id="profile_clearBtn" class="clearBtn">Clear form</button>
+                    <button type="submit" id="profile_NextBtn" class="nextBtn" onclick="">Next</button>
+                </div>
+            </form>
+        </div>
+
+<!-- END OF STEP 1 ------------------------ -->
+
+<!-- STEP 2 ------------------------ -->
+
+        <div class="mainDivs hidden_div" id="step2MainDiv">
+
+            <form id="addressForm" class="profileForm">
+                <div class="leftContent formInputs">
+                    <h2>Address</h2>
+                    <input type="text" name="firstName" size="20" maxlength="20" placeholder="First Name*" required>
+                    <input type="text" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required>
+                    <input type="date" name="birthday" placeholder="Birthday" required>
+                    <input type="text" name="Address1" placeholder="Address 1" maxlength="50" required>
+                    <input type="text" name="Address2" placeholder="Address 2" maxlength="50">
+                    <input type="number" name="postalCode" placeholder="Postal Code" maxlength="5" required>
+
+                    <select name="country" class="select" required>
+                        <option disabled selected>Select a Country</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Spain">Spain</option>
+                    </select>
+
+                    <div class="countryCodeDiv">
+                        <select name="countryCode" class="countryCode select" required>
+                            <option disabled selected>+CC</option>
+                            <option value="Andorra">AND</option>
+                            <option value="France">FRA</option>
+                            <option value="Germany">DEU</option>
+                            <option value="Greece">GRC</option>
+                            <option value="Spain">ESP</option>
+                        </select>
+                        <input type="tel" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
+                    </div>
+
+                </div>
+
+                <div class="rightContent add_rc">
+                    <div class="add_rc_check">
+                        <input type="checkbox" name="RegularAddress" value="SaveRA" id="checkItem">
+                        <label for="checkItem">This is my regular address</label>
+                    </div>
+                    <div class="add_rc_btns formSmallBtns">
+                        <button type="reset" id="address_clearBtn" class="clearBtn">Clear form</button>
+                        <button type="submit" id="address_NextBtn" class="nextBtn" onclick="">Next</button>
+                    </div>
+                </div>
+
+        
+            </form>
+
+        </div>
+
+<!-- END OF STEP 2 ------------------------ -->
+
+<!-- STEP 3 ------------------------ -->
+
+        <div class="mainDivs hidden_div" id="step3MainDiv">
+                <form id="shippingForm" class="profileForm">
+                    <div class="leftContent formInputs">
+                        <h2>Shipping</h2>
+                        <h3>Shipping type</h3>
+                        <div id="radioOptions" class="radioOptions">
+                            <div class="radioOpt">
+                                <input type="radio" id="opt1" name="shippingType" value="opt1" required>
+                                <label for="opt1">Free shipment (72H)</label>
+                            </div>
+                            <div class="radioOpt">
+                                <input type="radio" id="opt2" name="shippingType" value="opt2" required>
+                                <label for="opt2">Extra shipping (48H) <span>(+4,99€)</span></label>
+                            </div>
+                            <div class="radioOpt">
+                                <input type="radio" id="opt3" name="shippingType" value="opt3" required>
+                                <label for="opt3">Premium (24h) <span>(+9,99€)</span></label>
+                            </div>
+                        </div>
+                        
+                        <div class="giftDiv">
+                            <div class="radioOpt">
+                                <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
+                                <label for="giftCheckbox">Is it a gift?</label>
+                            </div>
+                            <div id="giftContent" class="giftContent">
+                                <textarea name="textBox" id="textBox" disabled maxlength="200" placeholder="Gift Message"></textarea>
+                                <label for="imageInput">Gift wrapper image</label>
+                                <input type="file" name="imageInput" id="imageInput" accept="image/png, image/jpeg" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightContent ship_rc formSmallBtns">
+                        <button type="reset" id="shipping_clearBtn" class="clearBtn">Clear form</button>
+                        <button type="submit" id="shipping_NextBtn" class="nextBtn" onclick="">Next</button>
+                    </div>
                 </form>
+        </div>
+
+<!-- END OF STEP 3 ------------------------ -->
+
+<!-- STEP 4 ------------------------ -->
+
+        <div class="mainDivs hidden_div" id="step4MainDiv">
+            <section class="leftContent">
+                <h2 class="yourPurchaseText">Your Purchase</h2>
+                <div id="purchaseResume" class="purchaseResume">
+                    <div id="purchaseImg" class="purchaseImg"></div>
+                    <div class="purchaseContent">
+                        <h1 id="prodcutName" class="productName">Illegal shirt</h1>
+                        <p class="productDescription">Please don't accept imitations or illegal copies of the brand. Any of these would be very bad T-shirts. Take this advice seriously, please.</p>
+                        <div class="SizeColor">
+                            <div class="SCResumeDiv">
+                                <h3>Size</h3>
+                                <p class="sizeP">XS</p>
+                            </div>
+                            <div class="SCResumeDiv">
+                                <h3>Color</h3>
+                                <p class="colorP"></p>
+                            </div>
+                        </div>
+                        <h3 class="delDateTitle">Estimated delivery date:</h3>
+                        <p id="delDateText" class="delDateText">July 21st 2021</p>
+                    </div>
                 </div>
             </section>
-            <section>
-
-            </section>
-        </div>
-        <div class='mainDivs' id="step2Div" display='none'>
-            <section>
-
-            </section>
-            <section>
-
-            </section>
-        </div>
-        <div class='mainDivs' id="step3Div" display='none'>
-            <section id="imgSection">
-                <form action="index.html" method="post">
-                    <h1>Shipping</h1><br></br>
-                    <h2>Shipping type</h2>
-                    <div id="radioOptions">
-                        <input type="radio" id="opt1" name="shippingType" value="opt1">
-                        <label for="opt1">Free shipment (72H)</label><br></br>
-
-                        <input type="radio" id="opt2" name="shippingType" value="opt2">
-                        <label for="opt2">Extra shipping (48H) <a style="font-weight: bold;">4,99€<a></label><br></br>
-
-                        <input type="radio" id="opt3" name="shippingType" value="opt3">
-                        <label for="opt3">Premium (24h) <a style="font-weight: bold;">9,99€</a></label>
+            <section class="rightContent">
+                <h2 class="resumeText">Resume</h2>
+                <div id="totalResume">
+                    <div class="productAccount">
+                        <p class="productText">Product Name</p>
+                        <h3 class="productPrice">100€</h3>
                     </div>
-                
-                    <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
-                    <label for="giftCheckbox">Is it a gift</label><br></br>
-                    <div id="giftContent">
-                        <label>Gift message</label><br></br>
-                        <textarea name="textBox" id="textBox" rows="10" cols="35" disabled></textarea>
-                    
-                        <br></br>
-                        <label>Gift weapper image</label><br></br>
-                        <input type="file" name="imageInput" id="imageInput" accept="image/*" disabled><br></br>
+                    <div class="shippingAccount">
+                        <p class="shippingText">Premium Shipping</p>
+                        <h3 class="shippingPrice">9,99€</h3>
                     </div>
-                    <div class="formButtons">
-                        <button type="reset">Clear form</button>
-                        <button type="submit">Next</button>
-                    </div>
+                </div>
+                <div class="totalPrice">
+                    <h2>Total</p>
+                    <h2>109,99€</h3>
+                </div>
+                <form>
+                    <button id="buyNowBtn" class="longBtn" disabled>Buy Now!</button>
+                    <input type="checkbox" name="conditions" id="conditions" required>
+                    <label for="conditions" id="checkboxText" class="checkboxText">I've read and accept the terms and conditions</label>
                 </form>
             </section>
-            <section id="contentSection">
-                
-            </section>
-            
-        </div>
-        <div class='mainDivs' id="step4Div" display='none'>
-            <section>
-
-            </section>
-            <section>
-
-            </section>
         </div>
 
-        <div class='mainDivs' id="lastStepDiv" display='none'>
-            <section>
-
-            </section>
-            <section>
-
-            </section>
-        </div>
+<!-- END OF STEP 4 ------------------------ -->
+        
     </main>
-    <script src="slider.js"></script>
-    <script src="functions.js"></script>
+
+    <footer>
+    </footer>
+
+    <script src="js/slider.js"></script>
+    <script src="js/functions.js"></script>
 </body>
-<footer>
-
-</footer>
-<!-- <script>
-
-    function next(){
-        document.body.appendChild
-    }
-</script> -->
 </html>

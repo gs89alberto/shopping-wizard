@@ -1,0 +1,26 @@
+.profileForm {
+  width: 100%;
+  height: max-content;
+  display: flex;
+}
+
+.profileForm h2 {
+  width: 100%;
+  border-bottom: 1px solid #242424;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.formInputsProfile {
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prf_rc {
+  max-height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}

@@ -1,0 +1,140 @@
+.yourPurchaseText {
+  width: 100%;
+  border-bottom: 1px solid #242424;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.purchaseContent h1 {
+  margin-bottom: 15px;
+}
+
+.purchaseContent p {
+  margin-bottom: 15px;
+}
+
+.purchaseResume {
+  width: 100%;
+  display: flex;
+}
+
+.purchaseImg {
+  width: 40%;
+  height: 250px;
+  box-sizing: border-box;
+  background-image: url("img/Rojo_Front.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  margin-right: 15px;
+}
+
+.purchaseContent {
+  width: 65%;
+  box-sizing: border-box;
+  margin-left: 5px;
+}
+
+.SizeColor {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.sizeP {
+  width: 45px;
+  height: 30px;
+  border: 1px solid #242424;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.colorP {
+  width: 45px;
+  height: 30px;
+  border: none;
+  background-color: rgb(201, 38, 38);
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.SCResumeDiv {
+  margin-right: 15px;
+}
+
+.delDateTitle {
+  margin-bottom: 5px;
+}
+
+/* RIGHT CONTENT ----------------------- */
+
+.resumeText {
+  width: 100%;
+  border-bottom: 1px solid #242424;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+#totalResume {
+  width: 100%;
+  border-bottom: 1px solid #242424;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.productAccount {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.shippingAccount {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.totalPrice {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #242424;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.checkboxText {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#buyNowBtn:disabled {
+  cursor: initial;
+  background-image: none;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+#buyNowBtn:disabled:hover {
+  opacity: 1;
+}
+
+#conditions {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #0197f6;
+  cursor: pointer;
+  margin-left: 18px;
+}

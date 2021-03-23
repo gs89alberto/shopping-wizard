@@ -1,0 +1,30 @@
+.ship_rc {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.radioOptions {
+  margin-bottom: 20px;
+}
+
+.radioOpt {
+  height: 30px;
+}
+
+.formInputs h3 {
+  margin-bottom: 20px;
+}
+
+.giftContent label {
+  display: block;
+  margin-top: 10px;
+  height: 30px;
+}
+
+.giftContent input[type="file"] {
+  width: max-content;
+  min-height: max-content;
+  border: none;
+  padding-left: 0;
+}
