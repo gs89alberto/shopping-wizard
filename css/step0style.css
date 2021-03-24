@@ -206,19 +206,19 @@ img {
   background-size: 50px 50px;
 }
 #colorButton1 {
-  background-image: url("../img/Blaca_Front.jpg");
+  background-image: url("../img/whiteFront.jpg");
 }
 #colorButton2 {
-  background-image: url("../img/Azul_Front.jpg");
+  background-image: url("../img/blueFront.jpg");
 }
 #colorButton3 {
-  background-image: url("../img/Negro_Front.jpg");
+  background-image: url("../img/blackFront.jpg");
 }
 #colorButton4 {
-  background-image: url("../img/Rojo_Front.jpg");
+  background-image: url("../img/redFront.jpg");
 }
 #colorButton5 {
-  background-image: url("../img/Verde_Front.jpg");
+  background-image: url("../img/greenFront.jpg");
 }
 
 .formButtons {

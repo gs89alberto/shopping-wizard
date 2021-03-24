@@ -22,25 +22,25 @@
 
 <!-- STEP 0 ------------------------ -->
 
-        <div class="mainDivs step0MainDiv" id="step0MainDiv">
+        <div class="mainDivs step0MainDiv hidden_div" id="step0MainDiv">
 
                 <section id="imgSection">
                     <div class="slideshow-container">
 
                         <div class="mySlides fade">
-                            <img src="img/WFront.jpg" style="width:100%">
+                            <img id="imgSl1" src="img/whiteFront.jpg" style="width:100%">
                         </div>
                         
                         <div class="mySlides fade">
-                            <img src="img/WBack.jpg" style="width:100%">
+                            <img id="imgSl2" src="img/whiteBack.jpg" style="width:100%">
                         </div>
                         
                         <div class="mySlides fade">
-                            <img src="img/WLeft.jpg" style="width:100%">
+                            <img id="imgSl3" src="img/whiteLeft.jpg" style="width:100%">
                         </div>
 
                         <div class="mySlides fade">
-                            <img src="img/WRight.jpg" style="width:100%">
+                            <img id="imgSl4" src="img/whiteRight.jpg" style="width:100%">
                         </div>
                         
                         <a class="prev_arrow" onclick="plusSlides(-1)"></a>
@@ -78,11 +78,11 @@
                             </div>
                             <div class="colorDivSelector">
                                 <h3>Color</h3>
-                                <button class='colorButton' id="colorButton1"></button>
-                                <button class='colorButton' id="colorButton2"></button>
-                                <button class='colorButton' id="colorButton3"></button>
-                                <button class='colorButton' id="colorButton4"></button>
-                                <button class='colorButton' id="colorButton5"></button>
+                                <button class='colorButton' id="colorButton1" value="white"></button>
+                                <button class='colorButton' id="colorButton2" value="blue"></button>
+                                <button class='colorButton' id="colorButton3" value="black"></button>
+                                <button class='colorButton' id="colorButton4" value="red"></button>
+                                <button class='colorButton' id="colorButton5" value="green"></button>
                             </div>
                         
                         <button id="addToCartBtn" class="longBtn">Add To Cart</button>
@@ -96,7 +96,7 @@
 
 <!-- HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
 
-        <div id="topBar" class="topBar hidden" style="display: flex;">
+        <div id="topBar" class="topBar" style="display: flex;">
 
     <!-- PROGRESS BAR ---------------------------------- -->
     
@@ -141,13 +141,13 @@
 
 <!-- STEP 1 ------------------------ -->
 
-        <div class="mainDivs hidden_div" id="step1MainDiv">
+        <div class="mainDivs" id="step1MainDiv">
             
             <form id="profileForm" class="profileForm">
                 <div class="leftContent">
                     <h2 class="titleStep">Profile</h2>
-                    <div class="formInputsProfile formInputs">
-                        <input type="text" id="name" name="user" placeholder="Username*" required="required" pattern="[A-Za-z]{5,}" maxlength="20" title="Introduce a valid user name">
+                    <div id="pfDiv" class="formInputsProfile formInputs">
+                        <input type="text" id="name" name="user" placeholder="Username*" required="required" pattern="[A-Za-z]{4,}" maxlength="20" title="Introduce a valid user name" onkeyup="checkUserName()">
                         <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50">
                         <input type="password" id="pwd" name="pwd" placeholder="Password*" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}" maxlength="20" title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character">
                         <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password*" required="required">
@@ -318,5 +318,6 @@
 
     <script src="js/slider.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/formValidations.js"></script>
 </body>
 </html>

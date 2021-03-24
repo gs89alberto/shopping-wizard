@@ -1,3 +1,4 @@
+
 document.getElementById('giftCheckbox').addEventListener('change', function(event) {
     if(event.target.checked) {
         Array.from(document.getElementById('giftContent').children).forEach(element => {
@@ -10,13 +11,17 @@ document.getElementById('giftCheckbox').addEventListener('change', function(even
     }
 });
 
-document.getElementById('conditions').addEventListener('change', function(event) {    
-    if(event.target.checked) {
-        document.getElementById('buyNowBtn').disabled = false;
-    } else {
-        document.getElementById('buyNowBtn').disabled = true;
-    }
-});
+function buyNoWBtnStatus () {
+    document.getElementById('conditions').addEventListener('change', function(event) {    
+        if(event.target.checked) {
+            document.getElementById('buyNowBtn').disabled = false;
+        } else {
+            document.getElementById('buyNowBtn').disabled = true;
+        }
+    });
+}
+
+buyNoWBtnStatus();
 
 const popUpDiv = document.querySelector('#popUpDiv');
 

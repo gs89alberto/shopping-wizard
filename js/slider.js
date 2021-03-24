@@ -1,4 +1,20 @@
-'use strict';
+let colors = document.querySelectorAll('.colorButton');
+
+colors.forEach(element => {
+  element.addEventListener('click', changePicturesOnSlide(element.getAttribute('value'), true))
+})
+
+function changePicturesOnSlide(color) {
+  let picOne = document.querySelector('#imgSl1');
+  let picTwo = document.querySelector('#imgSl2');
+  let picThree = document.querySelector('#imgSl3');
+  let picFour = document.querySelector('#imgSl4');
+  picOne.src = `img/${color}Front.jpg`;
+  picTwo.src = `img/${color}Back.jpg`;
+  picThree.src = `img/${color}Left.jpg`;
+  picFour.src = `img/${color}Right.jpg`;
+  currentSlide(1);
+}
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -25,4 +41,7 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-}
+};
+
+
+
