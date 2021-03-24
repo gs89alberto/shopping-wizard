@@ -40,11 +40,11 @@ function nextStep(event) {
     if (targetId === 'addToCartBtn') {
         var templateBars = document.querySelector('#bars');
         var cloneBars =  templateBars.content.cloneNode(true);
-        document.body.appendChild(cloneBars);
+        document.body.getElementsByTagName('main')[0].appendChild(cloneBars);
     }
     var template = document.querySelector('#template' + domLists[targetId][1]);
     var clone =  template.content.cloneNode(true);
-    document.body.appendChild(clone);
+    document.body.getElementsByTagName('main')[0].appendChild(clone);
     if (domLists[targetId][2]) {
         setEventSubmitButton(domLists[targetId][2]);
     }
