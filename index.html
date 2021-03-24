@@ -16,14 +16,13 @@
 </head>
 <body>
     <header>
-        <img id='logo' src='design/Adidos_logo.png'>
+        <a href="index.html"><img id='logo' src='design/Adidos_logo.png'></a>
     </header>
     <main>
 
 <!-- STEP 0 ------------------------ -->
-
-        <div class="mainDivs step0MainDiv hidden_div" id="step0MainDiv">
-
+    
+        <div class="mainDivs step0MainDiv" id="step0MainDiv">
                 <section id="imgSection">
                     <div class="slideshow-container">
 
@@ -89,11 +88,10 @@
                         </div>
                     </div>                
                 </section>
-
         </div>
-
 <!-- END STEP 0 ------------------------ -->
 
+<template id="bars">
 <!-- HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
 
         <div id="topBar" class="topBar" style="display: flex;">
@@ -120,8 +118,7 @@
                         <h4>Finish</h4>
                     </div>
                 </div>
-            </div>
-    
+            </div>    
     <!-- END OF PROGRESS BAR ---------------------------------- -->
     
     <!-- POP UP HURRY UP MESSAGE ---------------------------------- -->
@@ -136,9 +133,10 @@
     <!-- END POP UP HURRY UP MESSAGE ---------------------------------- -->
     
         </div>
-
+    
 <!-- END HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
-
+</template>
+<template id="template1">
 <!-- STEP 1 ------------------------ -->
 
         <div class="mainDivs" id="step1MainDiv">
@@ -155,16 +153,17 @@
                 </div>
                 <div class="rightContent prf_rc formSmallBtns">
                     <button type="reset" id="profile_clearBtn" class="clearBtn">Clear form</button>
-                    <button type="submit" id="profile_NextBtn" class="nextBtn" onclick="">Next</button>
+                    <button type="submit" id="profile_NextBtn" class="nextBtn">Next</button>
                 </div>
             </form>
         </div>
+        <!-- END OF STEP 1 ------------------------ -->
+    </template>
 
-<!-- END OF STEP 1 ------------------------ -->
-
+<template id="template2">
 <!-- STEP 2 ------------------------ -->
 
-        <div class="mainDivs hidden_div" id="step2MainDiv">
+        <div class="mainDivs" id="step2MainDiv">
 
             <form id="addressForm" class="profileForm">
                 <div class="leftContent formInputs">
@@ -206,7 +205,7 @@
                     </div>
                     <div class="add_rc_btns formSmallBtns">
                         <button type="reset" id="address_clearBtn" class="clearBtn">Clear form</button>
-                        <button type="submit" id="address_NextBtn" class="nextBtn" onclick="">Next</button>
+                        <button type="submit" id="address_NextBtn" class="nextBtn">Next</button>
                     </div>
                 </div>
 
@@ -216,10 +215,11 @@
         </div>
 
 <!-- END OF STEP 2 ------------------------ -->
-
+</template>
+<template id="template3">
 <!-- STEP 3 ------------------------ -->
 
-        <div class="mainDivs hidden_div" id="step3MainDiv">
+        <div class="mainDivs" id="step3MainDiv">
                 <form id="shippingForm" class="profileForm">
                     <div class="leftContent formInputs">
                         <h2>Shipping</h2>
@@ -253,16 +253,17 @@
                     </div>
                     <div class="rightContent ship_rc formSmallBtns">
                         <button type="reset" id="shipping_clearBtn" class="clearBtn">Clear form</button>
-                        <button type="submit" id="shipping_NextBtn" class="nextBtn" onclick="">Next</button>
+                        <button type="submit" id="shipping_NextBtn" class="nextBtn">Next</button>
                     </div>
                 </form>
         </div>
 
 <!-- END OF STEP 3 ------------------------ -->
-
+</template>
+<template id="template4">
 <!-- STEP 4 ------------------------ -->
 
-        <div class="mainDivs hidden_div" id="step4MainDiv">
+        <div class="mainDivs" id="step4MainDiv">
             <section class="leftContent">
                 <h2 class="yourPurchaseText">Your Purchase</h2>
                 <div id="purchaseResume" class="purchaseResume">
@@ -310,7 +311,17 @@
         </div>
 
 <!-- END OF STEP 4 ------------------------ -->
-        
+</template>
+<template id="template5">
+    <div class='mainDivs' id="lastStepDiv">
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+    </div>
+</template>
     </main>
 
     <footer>
