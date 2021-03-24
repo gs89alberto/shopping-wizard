@@ -77,11 +77,11 @@
                             </div>
                             <div class="colorDivSelector">
                                 <h3>Color</h3>
-                                <button class='colorButton' id="colorButton1" value="white"></button>
-                                <button class='colorButton' id="colorButton2" value="blue"></button>
-                                <button class='colorButton' id="colorButton3" value="black"></button>
-                                <button class='colorButton' id="colorButton4" value="red"></button>
-                                <button class='colorButton' id="colorButton5" value="green"></button>
+                                <button class='colorButton' id="colorButton1" value="white" onmouseover="changePicturesOnSlide(value)"></button>
+                                <button class='colorButton' id="colorButton2" value="blue" onmouseover="changePicturesOnSlide(value)"></button>
+                                <button class='colorButton' id="colorButton3" value="black" onmouseover="changePicturesOnSlide(value)"></button>
+                                <button class='colorButton' id="colorButton4" value="red" onmouseover="changePicturesOnSlide(value)"></button>
+                                <button class='colorButton' id="colorButton5" value="green" onmouseover="changePicturesOnSlide(value)"></button>
                             </div>
                         
                         <button id="addToCartBtn" class="longBtn">Add To Cart</button>
@@ -146,7 +146,7 @@
                     <h2 class="titleStep">Profile</h2>
                     <div id="pfDiv" class="formInputsProfile formInputs">
                         <input type="text" id="name" name="user" placeholder="Username*" required="required" pattern="[A-Za-z]{4,}" maxlength="20" title="Introduce a valid user name" onkeyup="checkUserName()">
-                        <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50">
+                        <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50" onkeyup="checkEmail()">
                         <input type="password" id="pwd" name="pwd" placeholder="Password*" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}" maxlength="20" title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character">
                         <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password*" required="required">
                     </div>
@@ -329,6 +329,6 @@
 
     <script src="js/slider.js"></script>
     <script src="js/functions.js"></script>
-    <script src="js/formValidations.js"></script>
+    <!-- <script src="js/formValidations.js"></script> -->
 </body>
 </html>

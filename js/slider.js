@@ -1,9 +1,5 @@
 let colors = document.querySelectorAll('.colorButton');
 
-colors.forEach(element => {
-  element.addEventListener('click', changePicturesOnSlide(element.getAttribute('value'), true))
-})
-
 function changePicturesOnSlide(color) {
   let picOne = document.querySelector('#imgSl1');
   let picTwo = document.querySelector('#imgSl2');

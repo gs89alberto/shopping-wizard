@@ -58,9 +58,5 @@ function checkPassword() {
 
 
 
-emailVal.addEventListener('keyup', checkEmail)
-
-
-
 
 
