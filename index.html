@@ -59,30 +59,30 @@
                             <h1>Illegal shirt</h1>
                             <p>Please don't accept imitations or illegal copies of the brand. Any of these would be very bad T-shirts. Take this advice seriously, please.</p>
                             <h3>Price</h3>
-                            <h2>100€ or more</h2>
+                            <h2 id="productprice" value="100">100€ or more</h2>
                         </div>
                         
                         <div id="step0Form">
                             <div class="sizeDivSelector">
                                 <h3>Size</h3>
-                                <select name="size" id="sizeSelect">
-                                    <option value="XL">XS</option>
-                                    <option value="L">S</option>
-                                    <option value="S">M</option>
-                                    <option value="M">L</option>
+                                <select name="size" id="sizeSelect" onchange="shirtSize(value)">
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
                                     <option value="XL">XL</option>
                                 </select>
                             </div>
                             <div class="colorDivSelector">
                                 <h3>Color</h3>
-                                <button class='colorButton' id="colorButton1" value="white" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton2" value="blue" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton3" value="black" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton4" value="red" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton5" value="green" onmouseover="changePicturesOnSlide(value)"></button>
+                                <button class='colorButton' id="colorButton1" value="white" onmouseover="changePicturesOnSlide(value)"  onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton2" value="blue" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton3" value="black" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton4" value="red" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton5" value="green" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
                             </div>
                         
-                        <button id="addToCartBtn" class="longBtn">Add To Cart</button>
+                        <button type="button" id="addToCartBtn" class="longBtn">Add To Cart</button>
                         </div>
                     </div>                
                 </section>
@@ -91,7 +91,7 @@
     </main>
     <footer>
     </footer>
-
+  <!-- <script src="js/collectData.js"></script> -->
     <script src="js/slider.js"></script>
     <script src="js/functions.js"></script>
     <script type="module">
@@ -99,7 +99,6 @@
         loadComponent('templates/template2.html');
         loadComponent('templates/template3.html');
         loadComponent('templates/template4.html');
-        loadComponent('templates/template5.html');
         loadComponent('templates/templateBars.html');
     </script>
     <script src="js/profileFormValidation.js"></script>
