@@ -17,8 +17,8 @@ document.getElementById('addToCartBtn').addEventListener('click', nextStep);
 
 function setEventSubmitButton(elementId) {
     var el = document.getElementById(elementId);
-    if(el){
-        el.addEventListener('click', nextStep);
+    if(el) {        
+        el.addEventListener('click', nextStep);      
     }
     if (elementId === 'shipping_NextBtn') setGiftCheckboxEvents();
     if (elementId === 'buyNowBtn') setBuyButtonCondition();
@@ -47,13 +47,17 @@ function nextStep(event) {
     
     var targetId = event.target.id;
     var domLists = {
-        'addToCartBtn': ['step0MainDiv', '1', 'profile_NextBtn'],
+        'addToCartBtn': ['step0MainDiv', '1', 'profile_NextBtn'], //idCurrentBtn - currentDiv - next template - next btn
         'profile_NextBtn': ['step1MainDiv', '2', 'address_NextBtn'],
         'address_NextBtn': ['step2MainDiv', '3', 'shipping_NextBtn'],
         'shipping_NextBtn': ['step3MainDiv', '4', 'buyNowBtn'],
         'buyNowBtn': ['step4MainDiv', '5', null]
     };
 
+    if (targetId === 'shipping_NextBtn' && !selectedRadiobutton) {
+        alert('Selecciona un tipo de envio');
+        return false;
+    }
     document.getElementById(domLists[targetId][0]).remove();
     if (targetId === 'addToCartBtn') {
         var templateBars = document.querySelector('#bars');
@@ -68,8 +72,7 @@ function nextStep(event) {
         setTopBarStyle(domLists[targetId][1]);
     } else {
         document.getElementById('topBar')?.remove();
-    }
-    
+    }    
 }
 
 function setBuyButtonCondition() {
@@ -119,8 +122,8 @@ function loadComponent (file) {
 //Principio Recojer Datos-----------------------------------------------------------------------------------------------------------------
 
   //Start Page Vars
-let size;
-let colores;
+let size = 'XS';
+let colores = 'white';
 let imageShirt = {
     "white":"img/whiteFront.jpg",
     "black":"img/blackFront.jpg",
@@ -148,8 +151,9 @@ let regularAdressConfirm = false;
 //Shipping Type Vars
 let price1;
 let option1;
-let productPrice = document.getElementById("productprice").getAttribute("value"); 
-
+let productPrice = document.getElementById("productprice").getAttribute("value");
+var selectedRadiobutton = false;
+var shippingType = 0;
 
 //Start Page Functions
 function shirtSize(sizes){
@@ -196,29 +200,40 @@ function adressData(){
     };
 
 //Shipping Type Functions
-function vasonovas(precio){
-    if(precio == "opt1"){
+function setShippingType(precio){
+    if(precio === "opt1") {
         price1 = 0;
         option1 = "72h";
-    }else if(precio == "opt2"){
+        shippingType = 3;
+    }else if(precio === "opt2") {
         price1 = 4.99;
         option1 = "48h";
-    }else if(precio == "opt3"){
+        shippingType = 2;
+    }else if(precio === "opt3") {
         price1 = 9.99;
         option1 = "24h";
-    }     
+        shippingType = 1;
+    }
+    selectedRadiobutton = true;
 }
 
 
 
 //Finsh Page Functions
-function changePage(){
+function changePage(){    
     document.getElementById("sizeSelected").innerHTML = size;
     document.getElementById("colorSelected").style.backgroundColor=colores;
-    document.getElementById("delDateText").innerHTML = "In "+ option1;
+
+    var currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + Number(shippingType));
+    document.getElementById("deliveryDate").innerHTML = currentDate.toLocaleDateString();
+
     document.getElementById("shippingPrice").innerHTML = price1 + "€";
     document.getElementById("productprice").innerHTML = productPrice + "€";
-    document.getElementById("finishprice").innerHTML = productPrice + price1 + "€";
-    document.getElementById("purchaseImg").style.backgroundImage= "url("+imageShirt[colores]+")";
+    document.getElementById("finishprice").innerHTML = Number(productPrice) + price1 + "€";
+    if (imageShirt[colores]) {
+        document.getElementById("purchaseImg").style.backgroundImage = "url("+imageShirt[colores]+")";
+    }
+    
 }
 //Final Recojer Datos ------------------------------------------------------------------------------------------------------------------------------
