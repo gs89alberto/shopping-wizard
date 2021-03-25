@@ -1,3 +1,4 @@
+document.getElementById('addToCartBtn').addEventListener('click', nextStep);
 
 function setGiftCheckboxEvents() {
     document.getElementById('giftCheckbox').addEventListener('change', function(event) {
@@ -13,18 +14,37 @@ function setGiftCheckboxEvents() {
     });
 }
 
-document.getElementById('addToCartBtn').addEventListener('click', nextStep);
+
+function confirmValidationProfile () {
+    if (nameValue && lastName && psw && confirmPsw) {
+        nextStep();
+    } else {
+        alert('Algo falla');
+    }
+}
+
+function confirmValidationAddress () {
+   if (nameValue && lastName && psw && confirmPsw) {
+       nextStep();
+   } else {
+       alert('Algo falla');
+   }
+}
 
 function setEventSubmitButton(elementId) {
-    var el = document.getElementById(elementId);
-    if(el){
-        el.addEventListener('click', nextStep);
-    }
-    if (elementId === 'shipping_NextBtn') setGiftCheckboxEvents();
-    if (elementId === 'buyNowBtn') setBuyButtonCondition();
-    // if (elementId !== 'addToCartBtn' || elementId !=== 'buyNowBtn') {
-    //     showTimer();
-    // }
+   var el = document.getElementById(elementId);
+   if(el){
+       if (elementId === 'profile_NextBtn'){
+           el.addEventListener('click', confirmValidationProfile);
+       } if (elementId === 'address_NextBtn') {
+           el.addEventListener('click', confirmValidationAddress);
+       } else {
+           el.addEventListener('click', nextStep);
+       }        
+   }
+   if (elementId === 'shipping_NextBtn') setGiftCheckboxEvents();
+   if (elementId === 'buyNowBtn') setBuyButtonCondition();
+
 }
 
 function nextStep(event) {

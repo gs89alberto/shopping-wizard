@@ -1,20 +1,24 @@
 <template id="template1">
+
     <!-- STEP 1 ------------------------ -->
     
             <div class="mainDivs" id="step1MainDiv">
-                
                 <form id="profileForm" class="profileForm">
                     <div class="leftContent">
                         <h2 class="titleStep">Profile</h2>
-                        <div id="pfDiv" class="formInputsProfile formInputs">
-                            <input type="text" id="name" name="user" placeholder="Username*" required="required" pattern="[A-Za-z]{4,}" maxlength="20" title="Introduce a valid user name" onkeyup="checkUserName()">
-                            <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50" onkeyup="checkEmail()">
-                            <input type="password" id="pwd" name="pwd" placeholder="Password*" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}" maxlength="20" title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character">
-                            <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password*" required="required">
+                        <div id="pfDiv" class="formInputs">
+                        <input type="text" id="name" name="user" placeholder="Username*" required="required"  maxlength="20" onkeyup="checkUserName()">
+                            <label for="name" id="step1name" class="formValidLabel"></label>
+                        <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50" onkeyup="checkEmail()">
+                            <label for="email" id="step1email" class="formValidLabel"></label>
+                        <input type="password" id="pwd" name="pwd" placeholder="Password*" required="required" maxlength="20" onkeyup="checkPassword()">
+                            <label for="pwd" id="step1pwd" class="formValidLabel"></label>
+                        <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password*" required="required" onkeyup="checkConfirmPwd()">
+                            <label for="pwdconfirm" id="step1confirmpwd" class="formValidLabel"></label>
                         </div>
                     </div>
                     <div class="rightContent prf_rc formSmallBtns">
-                        <button type="reset" id="profile_clearBtn" class="clearBtn">Clear form</button>
+                        <button type="reset" id="profile_clearBtn" class="clearBtn" onclick="clearLabelForms()">Clear form</button>
                         <button type="submit" id="profile_NextBtn" class="nextBtn">Next</button>
                     </div>
                 </form>

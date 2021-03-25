@@ -85,11 +85,19 @@ select {
   font-family: "Ubuntu", sans-serif;
 }
 
+select:focus {
+  outline: none;
+}
+
 input {
   font-family: "Ubuntu", sans-serif;
   color: #242424;
   font-size: 16px;
   font-weight: 300;
+}
+
+input:focus {
+  outline: none;
 }
 
 label {
@@ -307,6 +315,7 @@ footer {
 
 .rightContent {
   width: 30%;
+  min-width: 321px;
   margin-left: 10px;
   box-sizing: border-box;
   background-color: white;
@@ -335,6 +344,11 @@ input[type="date"]:invalid {
 
 .select {
   margin-bottom: 30px;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
 }
 
 .formInputs input {
@@ -385,4 +399,24 @@ input[type="date"]:invalid {
   background-image: linear-gradient(32deg, #04b2e4, #008aff);
   color: white;
   margin-left: 5px;
+}
+
+.validForm {
+  border: 2px solid #008aff !important;
+  color: #008aff;
+}
+
+.invalidForm {
+  border: 2px solid #d75151 !important;
+  color: #d75151;
+}
+
+.labelFormValidationStyle {
+  margin-top: -20px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.formValidLabel {
+  color: #d75151 !important;
 }

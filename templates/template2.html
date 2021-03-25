@@ -6,14 +6,19 @@
                 <form id="addressForm" class="profileForm">
                     <div class="leftContent formInputs">
                         <h2>Address</h2>
-                        <input type="text" name="firstName" size="20" maxlength="20" placeholder="First Name*" required>
-                        <input type="text" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required>
-                        <input type="date" name="birthday" placeholder="Birthday" required>
-                        <input type="text" name="Address1" placeholder="Address 1" maxlength="50" required>
+                        <input type="text" id="addFirstName" name="firstName" maxlength="20" placeholder="First Name*" required onkeyup="checkName()">
+                            <label for="addFirstName" id="step2name" class="formValidLabel"></label>
+                        <input type="text" id="addLastName" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required onkeyup="checkLastName()">
+                            <label for="addLastName" id="step2lastname" class="formValidLabel"></label>
+                        <input type="date" id="addBirthday" name="birthday" placeholder="Birthday" required onchange="checkBirthday()" onkeyup="checkBirthday()">
+                            <label for="addBirthday" id="step2birthday" class="formValidLabel"></label>
+                        <input type="text" id="addAddress1" name="Address1" placeholder="Address 1" maxlength="50" required onkeyup="checkAddress()">
+                            <label for="name" id="step2address" class="formValidLabel"></label>
                         <input type="text" name="Address2" placeholder="Address 2" maxlength="50">
-                        <input type="number" name="postalCode" placeholder="Postal Code" maxlength="5" required>
+                        <input type="number" id="addPostalCode" name="postalCode" placeholder="Postal Code" maxlength="5" required onkeyup="checkPostalCode()">
+                            <label for="name" id="step2postalcode" class="formValidLabel"></label>
     
-                        <select name="country" class="select" required>
+                        <select name="country" id="addCountry" class="select" required onchange="checkCountry()">
                             <option disabled selected>Select a Country</option>
                             <option value="Andorra">Andorra</option>
                             <option value="France">France</option>
@@ -21,9 +26,10 @@
                             <option value="Greece">Greece</option>
                             <option value="Spain">Spain</option>
                         </select>
+                            <label for="addCountry" id="step2country" class="formValidLabel"></label>
     
                         <div class="countryCodeDiv">
-                            <select name="countryCode" class="countryCode select" required>
+                            <select name="countryCode" id="addCountryCode" class="countryCode select" required onchange="checkCountryCode()">
                                 <option disabled selected>+CC</option>
                                 <option value="Andorra">AND</option>
                                 <option value="France">FRA</option>
@@ -31,8 +37,9 @@
                                 <option value="Greece">GRC</option>
                                 <option value="Spain">ESP</option>
                             </select>
-                            <input type="tel" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
+                            <input type="tel" id="addPhone" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
                         </div>
+                        <label for="addCountry" id="step2country" class="formValidLabel"></label>
     
                     </div>
     

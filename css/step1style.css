@@ -11,11 +11,11 @@
   padding-bottom: 15px;
 }
 
-.formInputsProfile {
+/* .formInputsProfile {
   height: 270px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .prf_rc {
   max-height: 100%;
