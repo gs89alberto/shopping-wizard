@@ -67,24 +67,24 @@
                         <div id="step0Form">
                             <div class="sizeDivSelector">
                                 <h3>Size</h3>
-                                <select name="size" id="sizeSelect">
-                                    <option value="XL">XS</option>
-                                    <option value="L">S</option>
-                                    <option value="S">M</option>
-                                    <option value="M">L</option>
+                                <select name="size" id="sizeSelect" onchange="shirtSize(value)">
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
                                     <option value="XL">XL</option>
                                 </select>
                             </div>
                             <div class="colorDivSelector">
                                 <h3>Color</h3>
-                                <button class='colorButton' id="colorButton1" value="white" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton2" value="blue" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton3" value="black" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton4" value="red" onmouseover="changePicturesOnSlide(value)"></button>
-                                <button class='colorButton' id="colorButton5" value="green" onmouseover="changePicturesOnSlide(value)"></button>
+                                <button class='colorButton' id="colorButton1" value="white" onmouseover="changePicturesOnSlide(value)"  onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton2" value="blue" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton3" value="black" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton4" value="red" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
+                                <button class='colorButton' id="colorButton5" value="green" onmouseover="changePicturesOnSlide(value)" onclick="shirtColor(value)"></button>
                             </div>
                         
-                        <button id="addToCartBtn" class="longBtn">Add To Cart</button>
+                        <button type="button" id="addToCartBtn" class="longBtn">Add To Cart</button>
                         </div>
                     </div>                
                 </section>
@@ -153,7 +153,7 @@
                 </div>
                 <div class="rightContent prf_rc formSmallBtns">
                     <button type="reset" id="profile_clearBtn" class="clearBtn">Clear form</button>
-                    <button type="submit" id="profile_NextBtn" class="nextBtn">Next</button>
+                    <button type="submit" id="profile_NextBtn" class="nextBtn" onclick="profileData()">Next</button>
                 </div>
             </form>
         </div>
@@ -168,14 +168,14 @@
             <form id="addressForm" class="profileForm">
                 <div class="leftContent formInputs">
                     <h2>Address</h2>
-                    <input type="text" name="firstName" size="20" maxlength="20" placeholder="First Name*" required>
-                    <input type="text" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required>
-                    <input type="date" name="birthday" placeholder="Birthday" required>
-                    <input type="text" name="Address1" placeholder="Address 1" maxlength="50" required>
-                    <input type="text" name="Address2" placeholder="Address 2" maxlength="50">
-                    <input type="number" name="postalCode" placeholder="Postal Code" maxlength="5" required>
+                    <input type="text" id="firstName" name="firstName" size="20" maxlength="20" placeholder="First Name*" required>
+                    <input type="text" id="lastName" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required>
+                    <input type="date" id="birthday" name="birthday" placeholder="Birthday" required>
+                    <input type="text" id="adress1" name="Address1" placeholder="Address 1" maxlength="50" required>
+                    <input type="text" id="adress2" name="Address2" placeholder="Address 2" maxlength="50">
+                    <input type="number" id="postalCode" name="postalCode" placeholder="Postal Code" maxlength="5" required>
 
-                    <select name="country" class="select" required>
+                    <select name="country" id="country" class="select" required>
                         <option disabled selected>Select a Country</option>
                         <option value="Andorra">Andorra</option>
                         <option value="France">France</option>
@@ -185,7 +185,7 @@
                     </select>
 
                     <div class="countryCodeDiv">
-                        <select name="countryCode" class="countryCode select" required>
+                        <select name="countryCode" id="prefix" class="countryCode select" required>
                             <option disabled selected>+CC</option>
                             <option value="Andorra">AND</option>
                             <option value="France">FRA</option>
@@ -193,19 +193,19 @@
                             <option value="Greece">GRC</option>
                             <option value="Spain">ESP</option>
                         </select>
-                        <input type="tel" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
+                        <input type="tel" id="telephone" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
                     </div>
 
                 </div>
 
                 <div class="rightContent add_rc">
                     <div class="add_rc_check">
-                        <input type="checkbox" name="RegularAddress" value="SaveRA" id="checkItem">
+                        <input type="checkbox" id="regularAdress" name="RegularAddress" value="SaveRA" id="checkItem">
                         <label for="checkItem">This is my regular address</label>
                     </div>
                     <div class="add_rc_btns formSmallBtns">
                         <button type="reset" id="address_clearBtn" class="clearBtn">Clear form</button>
-                        <button type="submit" id="address_NextBtn" class="nextBtn">Next</button>
+                        <button type="submit" id="address_NextBtn" class="nextBtn" onclick="adressData()">Next</button>
                     </div>
                 </div>
 
@@ -226,15 +226,15 @@
                         <h3>Shipping type</h3>
                         <div id="radioOptions" class="radioOptions">
                             <div class="radioOpt">
-                                <input type="radio" id="opt1" name="shippingType" value="opt1" required>
+                                <input type="radio" id="opt1" name="shippingType" value="opt1" onchange="vasonovas(value)" required>
                                 <label for="opt1">Free shipment (72H)</label>
                             </div>
                             <div class="radioOpt">
-                                <input type="radio" id="opt2" name="shippingType" value="opt2" required>
+                                <input type="radio" id="opt2" name="shippingType" value="opt2" onchange="vasonovas(value)" required>
                                 <label for="opt2">Extra shipping (48H) <span>(+4,99€)</span></label>
                             </div>
                             <div class="radioOpt">
-                                <input type="radio" id="opt3" name="shippingType" value="opt3" required>
+                                <input type="radio" id="opt3" name="shippingType" value="opt3" onchange="vasonovas(value)" required>
                                 <label for="opt3">Premium (24h) <span>(+9,99€)</span></label>
                             </div>
                         </div>
@@ -326,7 +326,7 @@
 
     <footer>
     </footer>
-
+    <script src="js/collectData.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/functions.js"></script>
     <!-- <script src="js/formValidations.js"></script> -->
