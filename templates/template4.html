@@ -12,15 +12,15 @@
                             <div class="SizeColor">
                                 <div class="SCResumeDiv">
                                     <h3>Size</h3>
-                                    <p class="sizeP">XS</p>
+                                    <p class="sizeP" id="sizeSelected">XS</p>
                                 </div>
                                 <div class="SCResumeDiv">
                                     <h3>Color</h3>
-                                    <p class="colorP"></p>
+                                    <p class="colorP" id="colorSelected"></p>
                                 </div>
                             </div>
                             <h3 class="delDateTitle">Estimated delivery date:</h3>
-                            <p id="delDateText" class="delDateText">July 21st 2021</p>
+                            <p id="delDateText" class="delDateText" id="estimatedDate">July 21st 2021</p>
                         </div>
                     </div>
                 </section>
@@ -29,16 +29,16 @@
                     <div id="totalResume">
                         <div class="productAccount">
                             <p class="productText">Product Name</p>
-                            <h3 class="productPrice">100€</h3>
+                            <h3 class="productPrice" id="productprice" value="100">100€</h3>
                         </div>
                         <div class="shippingAccount">
                             <p class="shippingText">Premium Shipping</p>
-                            <h3 class="shippingPrice">9,99€</h3>
+                            <h3 class="shippingPrice" id="shippingPrice">9,99€</h3>
                         </div>
                     </div>
                     <div class="totalPrice">
                         <h2>Total</p>
-                        <h2>109,99€</h3>
+                        <h2 id="finishprice">109,99€</h3>
                     </div>
                     <form>
                         <button id="buyNowBtn" class="longBtn" disabled>Buy Now!</button>
@@ -47,6 +47,5 @@
                     </form>
                 </section>
             </div>
-    
     <!-- END OF STEP 4 ------------------------ -->
     </template>
