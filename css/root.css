@@ -118,6 +118,7 @@ button {
 
 main {
   max-width: 1200px;
+  min-height: 1080px;
   margin-left: auto;
   margin-right: auto;
   padding-right: 15px;
@@ -302,7 +303,7 @@ footer {
 }
 
 .hidden_div {
-  display: none;
+  display: none !important;
 }
 
 /* GENERAL STYLES FOR FORM STEPS----------------------- */

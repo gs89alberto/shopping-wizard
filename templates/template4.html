@@ -40,11 +40,17 @@
                         <h2>Total</p>
                         <h2 id="finishprice">109,99€</h3>
                     </div>
-                    <form>
-                        <button id="buyNowBtn" class="longBtn" disabled>Buy Now!</button>
+                    <form id="formBuyNow">
+                        <button id="buyNowBtn" class="longBtn" disabled onclick="thankYou()">Buy Now!</button>
                         <input type="checkbox" name="conditions" id="conditions" required>
                         <label for="conditions" id="checkboxText" class="checkboxText">I've read and accept the terms and conditions</label>
                     </form>
+                    <div id="thankYouMsg" class="thankYouMsg hidden_div">
+                        <h2 style="color:white">Your Order is completed!</h2>
+                        <h3 style="color: white;">Thank you for your order</h3>
+                        <p style="color: white;">Your purchase took:</p>
+                        <h3 id="timeToPurchase" style="color:white">X minutes</h3>
+                    </div>
                 </section>
             </div>
     <!-- END OF STEP 4 ------------------------ -->

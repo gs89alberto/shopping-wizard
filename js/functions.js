@@ -14,6 +14,11 @@ function setGiftCheckboxEvents() {
     });
 }
 
+function thankYou() {
+    document.querySelector('#formBuyNow').classList.add('hidden_div');
+    document.querySelector('#thankYouMsg').classList.toggle('hidden_div');
+};
+
 
 function setEventSubmitButton(elementId) {
     var el = document.getElementById(elementId);
@@ -51,13 +56,25 @@ function nextStep(event) {
         'profile_NextBtn': ['step1MainDiv', '2', 'address_NextBtn'],
         'address_NextBtn': ['step2MainDiv', '3', 'shipping_NextBtn'],
         'shipping_NextBtn': ['step3MainDiv', '4', 'buyNowBtn'],
-        'buyNowBtn': ['step4MainDiv', '5', null]
+        // 'buyNowBtn': ['step4MainDiv', '5', null]
     };
 
-    if (targetId === 'shipping_NextBtn' && !selectedRadiobutton) {
-        alert('Selecciona un tipo de envio');
+
+    if (targetId === 'profile_NextBtn' && !userNameChecked && !userEmailChecked && !userPasswordChecked && !userPasswordConfirmedChecked) {
+        alert('You must fulfill the form correctly before continuing');
         return false;
     }
+
+    if (targetId === 'address_NextBtn' && !nameCheked && !lastNameChecked && !birthdayChecked && !addressChecked && !postalCodeChecked && !countryCodeChecked && !countryChecked && !phoneNumberChecked) {
+        alert ('You must fulfill the form correctly before continuing');
+        return false;
+    }
+
+    if (targetId === 'shipping_NextBtn' && !selectedRadiobutton) {
+        alert('You must select a shipping type before continuing');
+        return false;
+    }
+    
     document.getElementById(domLists[targetId][0]).remove();
     if (targetId === 'addToCartBtn') {
         var templateBars = document.querySelector('#bars');
@@ -152,6 +169,8 @@ let regularAdressConfirm = false;
 let price1;
 let option1;
 let productPrice = document.getElementById("productprice").getAttribute("value");
+let firstPriceText = document.getElementById("productprice").innerHTML;
+firstPriceText = '100 €'
 var selectedRadiobutton = false;
 var shippingType = 0;
 
@@ -164,14 +183,19 @@ function shirtColor(colorS){
     colores = colorS;
     if(colores === "white"){
         productPrice = 100;
+        firstPriceText = '100 €';
     }else if(colores === "black"){
         productPrice = 120;
+        firstPriceText = '120 €';
     }else if(colores === "red"){
         productPrice = 130;
+        firstPriceText = '130 €';
     }else if(colores === "blue"){
         productPrice = 130;
+        firstPriceText = '130 €';
     }else if(colores === "green"){
         productPrice = 130;
+        firstPriceText = '130 €';
     }
 }
 
@@ -237,3 +261,391 @@ function changePage(){
     
 }
 //Final Recojer Datos ------------------------------------------------------------------------------------------------------------------------------
+
+// VALIDATION PROFILE FORM -------------------------
+
+let pattUserName = /^[A-Za-z0-9 ]{5,}$/;
+let pattEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+let pattPswd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}$/;
+
+let userNameErr = 'The user name must have from 5 to 20 characters.';
+let emailErr = 'Please, insert a valid E-mail.'
+let pwdErr = 'The password must contain at least one number, one uppercase letter, one lowercase letter and one special character.'
+let pwdConfErr = 'The passwords doesn\'t match.'
+
+let userNameChecked = false;
+let userEmailChecked = false;
+let userPasswordChecked = false;
+let userPasswordConfirmedChecked = false;
+
+function checkUserName() {
+    const userNameVal = document.querySelector('#name');
+    const lName = document.getElementById('step1name');
+    if (userNameVal.value.length === 0) {
+        lName.innerHTML = '';
+        userNameVal.classList.remove('invalidForm', 'validForm');
+        lName.classList.remove('labelFormValidationStyle');
+        userNameChecked = false;
+    }   else {
+        if (!pattUserName.test(userNameVal.value)) {
+            userNameVal.classList.add('invalidForm');
+            lName.classList.add('labelFormValidationStyle');
+            lName.innerHTML = userNameErr;
+            userNameChecked = false;
+        } else {
+            lName.classList.remove('labelFormValidationStyle');
+            userNameVal.classList.remove('invalidForm');
+            lName.innerHTML = '';
+            userNameVal.classList.add('validForm');
+            userNameChecked = true;
+        }
+    }
+}
+
+function checkEmail() {
+    const emailVal = document.querySelector('#email');
+    const lMail = document.getElementById('step1email');
+    if (emailVal.value.length === 0) {
+        lMail.innerHTML = '';
+        emailVal.classList.remove('invalidForm', 'validForm');
+        lMail.classList.remove('labelFormValidationStyle');
+        userEmailChecked = false;
+    }   else {
+        if (!pattEmail.test(emailVal.value)) {
+            emailVal.classList.add('invalidForm');
+            lMail.classList.add('labelFormValidationStyle');
+            lMail.innerHTML = emailErr;
+            userEmailChecked = false;
+        } else {
+            lMail.classList.remove('labelFormValidationStyle');
+            emailVal.classList.remove('invalidForm');
+            lMail.innerHTML = '';
+            emailVal.classList.add('validForm');
+            userEmailChecked = true;
+        }
+    }
+}
+
+function checkPassword() {
+    const pwdVal = document.querySelector('#pwd');
+    const lpwd = document.getElementById('step1pwd');
+    if (pwdVal.value.length === 0) {
+        lpwd.innerHTML = '';
+        pwdVal.classList.remove('invalidForm', 'validForm');
+        lpwd.classList.remove('labelFormValidationStyle');
+        userPasswordChecked = false;
+    }   else {
+        if (!pattPswd.test(pwdVal.value)) {
+            pwdVal.classList.add('invalidForm');
+            lpwd.classList.add('labelFormValidationStyle');
+            lpwd.innerHTML = pwdErr;
+            userPasswordChecked = false;
+        } else {
+            lpwd.classList.remove('labelFormValidationStyle');
+            pwdVal.classList.remove('invalidForm');
+            lpwd.innerHTML = '';
+            pwdVal.classList.add('validForm');
+            userPasswordChecked = true;
+        };
+    };
+}
+
+function checkConfirmPwd() {
+    const pwdVal = document.querySelector('#pwd');
+    const pwdConfVal = document.querySelector('#pwdconfirm');
+    const lConfPwd = document.getElementById('step1confirmpwd');
+    if (pwdConfVal.value.length === 0) {
+        lConfPwd.innerHTML = '';
+        pwdConfVal.classList.remove('invalidForm', 'validForm');
+        lConfPwd.classList.remove('labelFormValidationStyle');
+        userPasswordConfirmedChecked = false;
+    }   else {
+        if (pwdConfVal.value !== pwdVal.value) {
+            pwdConfVal.classList.add('invalidForm');
+            lConfPwd.classList.add('labelFormValidationStyle');
+            lConfPwd.innerHTML = pwdConfErr;
+            userPasswordConfirmedChecked = false;
+        } else {
+            lConfPwd.classList.remove('labelFormValidationStyle');
+            pwdConfVal.classList.remove('invalidForm');
+            lConfPwd.innerHTML = '';
+            pwdConfVal.classList.add('validForm');
+            userPasswordConfirmedChecked = true;
+        };
+    };
+}
+
+function clearLabelForms() {
+    const userNameVal = document.querySelector('#name');
+    const emailVal = document.querySelector('#email');
+    const pwdVal = document.querySelector('#pwd');
+    const pwdConfVal = document.querySelector('#pwdconfirm');
+    
+    const lName = document.getElementById('step1name');
+    const lMail = document.getElementById('step1email');
+    const lpwd = document.getElementById('step1pwd');
+    const lConfPwd = document.getElementById('step1confirmpwd');
+
+    userNameVal.classList.remove('invalidForm', 'validForm');
+    emailVal.classList.remove('invalidForm', 'validForm');
+    pwdVal.classList.remove('invalidForm', 'validForm');
+    pwdConfVal.classList.remove('invalidForm', 'validForm');
+
+    lName.innerHTML = '';
+    lMail.innerHTML = '';
+    lpwd.innerHTML = '';
+    lConfPwd.innerHTML = '';
+
+    lName.classList.remove('labelFormValidationStyle');
+    lMail.classList.remove('labelFormValidationStyle');
+    lpwd.classList.remove('labelFormValidationStyle');
+    lConfPwd.classList.remove('labelFormValidationStyle');
+
+    userNameChecked = false;
+    userEmailChecked = false;
+    userPasswordChecked = false;
+    userPasswordConfirmedChecked = false;
+}
+
+// END OF VALIDATION PROFILE FORM -------------------------
+
+// VALIDATION ADDRESS FORM -------------------------
+
+let pattAddressUserName = /^[A-Za-z0-9 ]{5,}$/;
+let pattBirthday = /^([0-9]{4})\/([0-9]{2})\/([0-9]{2})$/;
+let pattAddAddressOne = /^\s*\S+(?:\s+\S+){2}/;
+let pattAddPC = /^([0-9]{5})$/;
+let pattAddPhone = /^\+?([(0-9)]{2,3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+
+let addFirstNameErr = 'The first name must have from 5 to 20 characters.';
+let addLastNameErr = 'The last name must have from 5 to 20 characters.';
+let addBirthdErr = 'Please insert a valid date.';
+let addAddressErr = 'Please insert a valid address.';
+let addPostalCErr = 'The Postal Code must have 5 digits.';
+let addCountryErr = 'Please select a country.';
+let addPhoneErr = 'Please insert a valid phone number. The format must be: +XX XXX XXX XXX';
+
+let nameCheked = false;
+let lastNameChecked = false;
+let birthdayChecked = false;
+let addressChecked = false;
+let postalCodeChecked = false;
+let countryCodeChecked = false;
+let countryChecked = false;
+let phoneNumberChecked = false;
+
+function checkName() {
+    const addFirstNameVal = document.querySelector('#addFirstName');
+    const lAName = document.getElementById('step2name');
+    if (addFirstNameVal.value.length === 0) {
+        lAName.innerHTML = '';
+        addFirstNameVal.classList.remove('invalidForm', 'validForm');
+        lAName.classList.remove('labelFormValidationStyle');
+    }   else {
+        if (!pattAddressUserName.test(addFirstNameVal.value)) {
+            addFirstNameVal.classList.add('invalidForm');
+            lAName.classList.add('labelFormValidationStyle');
+            lAName.innerHTML = addFirstNameErr;
+        } else {
+            lAName.classList.remove('labelFormValidationStyle');
+            addFirstNameVal.classList.remove('invalidForm');
+            lAName.innerHTML = '';
+            addFirstNameVal.classList.add('validForm');
+            nameCheked = true;
+        }
+    }
+}
+
+function checkLastName() {
+    const addLastNameVal = document.querySelector('#addLastName');
+    const lALName = document.getElementById('step2lastname');
+    if (addLastNameVal.value.length === 0) {
+        lALName.innerHTML = '';
+        addLastNameVal.classList.remove('invalidForm', 'validForm');
+        lALName.classList.remove('labelFormValidationStyle');
+    }   else {
+        if (!pattAddressUserName.test(addLastNameVal.value)) {
+            addLastNameVal.classList.add('invalidForm');
+            lALName.classList.add('labelFormValidationStyle');
+            lALName.innerHTML = addLastNameErr;
+        } else {
+            lALName.classList.remove('labelFormValidationStyle');
+            addLastNameVal.classList.remove('invalidForm');
+            lALName.innerHTML = '';
+            addLastNameVal.classList.add('validForm');
+            lastNameChecked = true;
+        }
+    }
+}
+
+function checkBirthday() {
+    const addBirthdayVal = document.querySelector('#addBirthday');
+    const lABirth = document.getElementById('step2birthday');
+    if (!addBirthdayVal.checkValidity()) {
+        addBirthdayVal.classList.add('invalidForm');
+        lABirth.classList.add('labelFormValidationStyle');
+        lABirth.innerHTML = addBirthdErr;
+    } else {
+        lABirth.classList.remove('labelFormValidationStyle');
+        addBirthdayVal.classList.remove('invalidForm');
+        lABirth.innerHTML = '';
+        addBirthdayVal.classList.add('validForm');
+        birthdayChecked = true;
+    }
+}
+
+function checkAddress() {
+    const addAddressVal = document.querySelector('#addAddress1');
+    const lAAdd = document.getElementById('step2address');
+    if (addAddressVal.value.length === 0) {
+        lAAdd.innerHTML = '';
+        addAddressVal.classList.remove('invalidForm', 'validForm');
+        lAAdd.classList.remove('labelFormValidationStyle');
+    }   else {
+        if (!pattAddAddressOne.test(addAddressVal.value)) {
+            addAddressVal.classList.add('invalidForm');
+            lAAdd.classList.add('labelFormValidationStyle');
+            lAAdd.innerHTML = addAddressErr;
+        } else {
+            lAAdd.classList.remove('labelFormValidationStyle');
+            addAddressVal.classList.remove('invalidForm');
+            lAAdd.innerHTML = '';
+            addAddressVal.classList.add('validForm');
+            addressChecked = true;
+        }
+    }
+}
+
+function checkPostalCode() {
+    const addPostalCodeVal = document.querySelector('#addPostalCode');
+    const lAPostalC = document.getElementById('step2postalcode');
+    if (addPostalCodeVal.value.length === 0) {
+        lAPostalC.innerHTML = '';
+        addPostalCodeVal.classList.remove('invalidForm', 'validForm');
+        lAPostalC.classList.remove('labelFormValidationStyle');
+    }   else {
+        if (!pattAddPC.test(addPostalCodeVal.value)) {
+            addPostalCodeVal.classList.add('invalidForm');
+            lAPostalC.classList.add('labelFormValidationStyle');
+            lAPostalC.innerHTML = addPostalCErr;
+        } else {
+            lAPostalC.classList.remove('labelFormValidationStyle');
+            addPostalCodeVal.classList.remove('invalidForm');
+            lAPostalC.innerHTML = '';
+            addPostalCodeVal.classList.add('validForm');
+            postalCodeChecked = true;
+        }
+    }
+}
+
+function setCountryCode(country) {
+    const addCountryCodeVal = document.querySelector('#addCountryCode');
+    const addPhoneVal = document.querySelector('#addPhone');
+    if (!addCountryCodeVal.checkValidity()) {
+        addCountryCodeVal.classList.add('invalidForm');
+    } else if (country === 'Andorra') {
+        addCountryCodeVal.value = 'Andorra';
+        addPhoneVal.value = '+376';
+        countryCodeChecked = true;
+    }   else if (country === 'France') {
+        addCountryCodeVal.value = 'France';
+        addPhoneVal.value = '+33';
+        countryCodeChecked = true;
+    }   else if (country === 'Germany') {
+        addCountryCodeVal.value = 'Germany';
+        addPhoneVal.value= '+49';
+        countryCodeChecked = true;
+    }   else if (country === 'Greece') {
+        addCountryCodeVal.value = 'Greece';
+        addPhoneVal.value = '+30';
+        countryCodeChecked = true;
+    }   else if (country === 'Spain') {
+        addCountryCodeVal.value = 'Spain';
+        addPhoneVal.value = '+34';
+        countryCodeChecked = true;
+    }   
+};
+
+function checkCountry() {
+    const addCountryVal = document.querySelector('#addCountry');
+    const lACountry = document.getElementById('step2country');
+    if (!addCountryVal.checkValidity()) {
+        addCountryVal.classList.add('invalidForm');
+        lACountry.classList.add('labelFormValidationStyle');
+        lACountry.innerHTML = addCountryErr;
+    } else {
+        lACountry.classList.remove('labelFormValidationStyle');
+        addCountryVal.classList.remove('invalidForm');
+        lACountry.innerHTML = '';
+        addCountryVal.classList.add('validForm');
+        setCountryCode(addCountryVal.value);
+        countryChecked = true;
+    }
+}
+
+function checkCountryCode() {
+    const addCountryCodeVal = document.querySelector('#addCountryCode');
+    const addPhoneVal = document.querySelector('#addPhone');
+    if (addCountryCodeVal.value === 'Andorra') {
+        addPhoneVal.value = '+376';
+    }   else if (addCountryCodeVal.value === 'France') {
+        addPhoneVal.value = '+33';
+    }   else if (addCountryCodeVal.value === 'Germany') {
+        addPhoneVal.value= '+49';
+    }   else if (addCountryCodeVal.value === 'Greece') {
+        addPhoneVal.value = '+30';
+    }   else if (addCountryCodeVal.value === 'Spain') {
+        addPhoneVal.value = '+34';
+    }
+}
+
+function checkPhoneNumber() {
+    const addPhoneVal = document.querySelector('#addPhone');
+    const lAPhone = document.getElementById('step2phone');
+    if (addPhoneVal.value.length === 0) {
+        lAPhone.innerHTML = '';
+        addPhoneVal.classList.remove('invalidForm', 'validForm');
+        lAPhone.classList.remove('labelFormValidationStyle');
+    }   else {
+        if (!pattAddPhone.test(addPhoneVal.value)) {
+            addPhoneVal.classList.add('invalidForm');
+            lAPhone.classList.add('labelFormValidationStyle');
+            lAPhone.innerHTML = addPhoneErr;
+        } else {
+            lAPhone.classList.remove('labelFormValidationStyle');
+            addPhoneVal.classList.remove('invalidForm');
+            lAPhone.innerHTML = '';
+            addPhoneVal.classList.add('validForm');
+            phoneNumberChecked = true;
+        }
+    }
+}
+
+function clearLabelAddForms() {
+    document.querySelector('#addFirstName').classList.remove('invalidForm', 'validForm');
+    document.querySelector('#addLastName').classList.remove('invalidForm', 'validForm');;
+    document.querySelector('#addBirthday').classList.remove('invalidForm', 'validForm');;
+    document.querySelector('#addAddress1').classList.remove('invalidForm', 'validForm');;
+    document.querySelector('#addPostalCode').classList.remove('invalidForm', 'validForm');;
+    document.querySelector('#addCountryCode').classList.remove('invalidForm', 'validForm');
+    document.querySelector('#addCountry').classList.remove('invalidForm', 'validForm');;
+    document.querySelector('#addPhone').classList.remove('invalidForm', 'validForm');;
+    
+    document.getElementById('step2phone').innerHTML = '';
+    document.getElementById('step2country').innerHTML = '';
+    document.getElementById('step2postalcode').innerHTML = '';
+    document.getElementById('step2address').innerHTML = '';
+    document.getElementById('step2birthday').innerHTML = '';
+    document.getElementById('step2lastname').innerHTML = '';
+    document.getElementById('step2name').innerHTML = '';
+
+    document.getElementById('step2phone').classList.remove('labelFormValidationStyle');
+    document.getElementById('step2country').classList.remove('labelFormValidationStyle');
+    document.getElementById('step2postalcode').classList.remove('labelFormValidationStyle');
+    document.getElementById('step2address').classList.remove('labelFormValidationStyle');
+    document.getElementById('step2birthday').classList.remove('labelFormValidationStyle');
+    document.getElementById('step2lastname').classList.remove('labelFormValidationStyle');
+    document.getElementById('step2name').classList.remove('labelFormValidationStyle');
+}
+
+// END OF ADDRESS FORM VALIDATION -----------------------------
