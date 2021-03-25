@@ -1,0 +1,56 @@
+<template id="template2">
+    <!-- STEP 2 ------------------------ -->
+    
+            <div class="mainDivs" id="step2MainDiv">
+    
+                <form id="addressForm" class="profileForm">
+                    <div class="leftContent formInputs">
+                        <h2>Address</h2>
+                        <input type="text" name="firstName" size="20" maxlength="20" placeholder="First Name*" required>
+                        <input type="text" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required>
+                        <input type="date" name="birthday" placeholder="Birthday" required>
+                        <input type="text" name="Address1" placeholder="Address 1" maxlength="50" required>
+                        <input type="text" name="Address2" placeholder="Address 2" maxlength="50">
+                        <input type="number" name="postalCode" placeholder="Postal Code" maxlength="5" required>
+    
+                        <select name="country" class="select" required>
+                            <option disabled selected>Select a Country</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Spain">Spain</option>
+                        </select>
+    
+                        <div class="countryCodeDiv">
+                            <select name="countryCode" class="countryCode select" required>
+                                <option disabled selected>+CC</option>
+                                <option value="Andorra">AND</option>
+                                <option value="France">FRA</option>
+                                <option value="Germany">DEU</option>
+                                <option value="Greece">GRC</option>
+                                <option value="Spain">ESP</option>
+                            </select>
+                            <input type="tel" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
+                        </div>
+    
+                    </div>
+    
+                    <div class="rightContent add_rc">
+                        <div class="add_rc_check">
+                            <input type="checkbox" name="RegularAddress" value="SaveRA" id="checkItem">
+                            <label for="checkItem">This is my regular address</label>
+                        </div>
+                        <div class="add_rc_btns formSmallBtns">
+                            <button type="reset" id="address_clearBtn" class="clearBtn">Clear form</button>
+                            <button type="submit" id="address_NextBtn" class="nextBtn">Next</button>
+                        </div>
+                    </div>
+    
+            
+                </form>
+    
+            </div>
+    
+    <!-- END OF STEP 2 ------------------------ -->
+    </template>

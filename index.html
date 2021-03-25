@@ -19,9 +19,7 @@
         <a href="index.html"><img id='logo' src='design/Adidos_logo.png'></a>
     </header>
     <main>
-
-<!-- STEP 0 ------------------------ -->
-    
+<!-- STEP 0 ------------------------ -->    
         <div class="mainDivs step0MainDiv" id="step0MainDiv">
                 <section id="imgSection">
                     <div class="slideshow-container">
@@ -90,245 +88,20 @@
                 </section>
         </div>
 <!-- END STEP 0 ------------------------ -->
-
-<template id="bars">
-<!-- HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
-
-        <div id="topBar" class="topBar" style="display: flex;">
-
-    <!-- PROGRESS BAR ---------------------------------- -->
-    
-            <div id="progressBar" class="progressBar">
-                <div class="allProgressStep">
-                    <div class="step">
-                        <p class="stepPoint completed" >1</p>
-                        <h4 class="completedText">Profile</h4>
-                    </div>
-                    <div class="step">
-                        <p class="stepPoint completed">2</p>
-                        <h4 class="completedText">Address</h4>
-
-                    </div>
-                    <div class="step actualStep">
-                        <p class="stepPoint completed">3</p>
-                        <h4 class="completedText">Shipping</h4>
-                    </div>
-                    <div class="step">
-                        <p class="stepPoint">4</p>
-                        <h4>Finish</h4>
-                    </div>
-                </div>
-            </div>    
-    <!-- END OF PROGRESS BAR ---------------------------------- -->
-    
-    <!-- POP UP HURRY UP MESSAGE ---------------------------------- -->
-    
-            <div id="popUpDiv" class="popUpDiv hidden">
-                <p>Your purchase started:</p>
-                <p id="closeX" class="closeX" onclick="hide()">&#x2715</p>
-                <h3 id="timerPopUp">3 minutes ago.</h4>
-                <h2>Hurry Up!</h2>
-            </div>
-    
-    <!-- END POP UP HURRY UP MESSAGE ---------------------------------- -->
-    
-        </div>
-    
-<!-- END HEAD OF THE MAIN WITH THE PROGRESS BAR AND THE HURRY UP POP UP ------------------------ -->
-</template>
-<template id="template1">
-<!-- STEP 1 ------------------------ -->
-
-        <div class="mainDivs" id="step1MainDiv">
-            
-            <form id="profileForm" class="profileForm">
-                <div class="leftContent">
-                    <h2 class="titleStep">Profile</h2>
-                    <div id="pfDiv" class="formInputsProfile formInputs">
-                        <input type="text" id="name" name="user" placeholder="Username*" required="required" pattern="[A-Za-z]{4,}" maxlength="20" title="Introduce a valid user name" onkeyup="checkUserName()">
-                        <input type="email" id="email" name="email" placeholder="Email*" required="required" maxlength="50" onkeyup="checkEmail()">
-                        <input type="password" id="pwd" name="pwd" placeholder="Password*" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}" maxlength="20" title="Must contain at least one number, one uppercase letter, one lowercase letter, one special character">
-                        <input type="password" id="pwdconfirm" name="pwdconfirm" placeholder="Confirm Password*" required="required">
-                    </div>
-                </div>
-                <div class="rightContent prf_rc formSmallBtns">
-                    <button type="reset" id="profile_clearBtn" class="clearBtn">Clear form</button>
-                    <button type="submit" id="profile_NextBtn" class="nextBtn">Next</button>
-                </div>
-            </form>
-        </div>
-        <!-- END OF STEP 1 ------------------------ -->
-    </template>
-
-<template id="template2">
-<!-- STEP 2 ------------------------ -->
-
-        <div class="mainDivs" id="step2MainDiv">
-
-            <form id="addressForm" class="profileForm">
-                <div class="leftContent formInputs">
-                    <h2>Address</h2>
-                    <input type="text" name="firstName" size="20" maxlength="20" placeholder="First Name*" required>
-                    <input type="text" name="lastName" size="20" maxlength="20" placeholder="Last Name*" required>
-                    <input type="date" name="birthday" placeholder="Birthday" required>
-                    <input type="text" name="Address1" placeholder="Address 1" maxlength="50" required>
-                    <input type="text" name="Address2" placeholder="Address 2" maxlength="50">
-                    <input type="number" name="postalCode" placeholder="Postal Code" maxlength="5" required>
-
-                    <select name="country" class="select" required>
-                        <option disabled selected>Select a Country</option>
-                        <option value="Andorra">Andorra</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Greece">Greece</option>
-                        <option value="Spain">Spain</option>
-                    </select>
-
-                    <div class="countryCodeDiv">
-                        <select name="countryCode" class="countryCode select" required>
-                            <option disabled selected>+CC</option>
-                            <option value="Andorra">AND</option>
-                            <option value="France">FRA</option>
-                            <option value="Germany">DEU</option>
-                            <option value="Greece">GRC</option>
-                            <option value="Spain">ESP</option>
-                        </select>
-                        <input type="tel" name="numberPhone" placeholder="Phone" class="phoneNumberInput" maxlength="9" required>
-                    </div>
-
-                </div>
-
-                <div class="rightContent add_rc">
-                    <div class="add_rc_check">
-                        <input type="checkbox" name="RegularAddress" value="SaveRA" id="checkItem">
-                        <label for="checkItem">This is my regular address</label>
-                    </div>
-                    <div class="add_rc_btns formSmallBtns">
-                        <button type="reset" id="address_clearBtn" class="clearBtn">Clear form</button>
-                        <button type="submit" id="address_NextBtn" class="nextBtn">Next</button>
-                    </div>
-                </div>
-
-        
-            </form>
-
-        </div>
-
-<!-- END OF STEP 2 ------------------------ -->
-</template>
-<template id="template3">
-<!-- STEP 3 ------------------------ -->
-
-        <div class="mainDivs" id="step3MainDiv">
-                <form id="shippingForm" class="profileForm">
-                    <div class="leftContent formInputs">
-                        <h2>Shipping</h2>
-                        <h3>Shipping type</h3>
-                        <div id="radioOptions" class="radioOptions">
-                            <div class="radioOpt">
-                                <input type="radio" id="opt1" name="shippingType" value="opt1" required>
-                                <label for="opt1">Free shipment (72H)</label>
-                            </div>
-                            <div class="radioOpt">
-                                <input type="radio" id="opt2" name="shippingType" value="opt2" required>
-                                <label for="opt2">Extra shipping (48H) <span>(+4,99€)</span></label>
-                            </div>
-                            <div class="radioOpt">
-                                <input type="radio" id="opt3" name="shippingType" value="opt3" required>
-                                <label for="opt3">Premium (24h) <span>(+9,99€)</span></label>
-                            </div>
-                        </div>
-                        
-                        <div class="giftDiv">
-                            <div class="radioOpt">
-                                <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
-                                <label for="giftCheckbox">Is it a gift?</label>
-                            </div>
-                            <div id="giftContent" class="giftContent">
-                                <textarea name="textBox" id="textBox" disabled maxlength="200" placeholder="Gift Message"></textarea>
-                                <label for="imageInput">Gift wrapper image</label>
-                                <input type="file" name="imageInput" id="imageInput" accept="image/png, image/jpeg" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rightContent ship_rc formSmallBtns">
-                        <button type="reset" id="shipping_clearBtn" class="clearBtn">Clear form</button>
-                        <button type="submit" id="shipping_NextBtn" class="nextBtn">Next</button>
-                    </div>
-                </form>
-        </div>
-
-<!-- END OF STEP 3 ------------------------ -->
-</template>
-<template id="template4">
-<!-- STEP 4 ------------------------ -->
-
-        <div class="mainDivs" id="step4MainDiv">
-            <section class="leftContent">
-                <h2 class="yourPurchaseText">Your Purchase</h2>
-                <div id="purchaseResume" class="purchaseResume">
-                    <div id="purchaseImg" class="purchaseImg"></div>
-                    <div class="purchaseContent">
-                        <h1 id="prodcutName" class="productName">Illegal shirt</h1>
-                        <p class="productDescription">Please don't accept imitations or illegal copies of the brand. Any of these would be very bad T-shirts. Take this advice seriously, please.</p>
-                        <div class="SizeColor">
-                            <div class="SCResumeDiv">
-                                <h3>Size</h3>
-                                <p class="sizeP">XS</p>
-                            </div>
-                            <div class="SCResumeDiv">
-                                <h3>Color</h3>
-                                <p class="colorP"></p>
-                            </div>
-                        </div>
-                        <h3 class="delDateTitle">Estimated delivery date:</h3>
-                        <p id="delDateText" class="delDateText">July 21st 2021</p>
-                    </div>
-                </div>
-            </section>
-            <section class="rightContent">
-                <h2 class="resumeText">Resume</h2>
-                <div id="totalResume">
-                    <div class="productAccount">
-                        <p class="productText">Product Name</p>
-                        <h3 class="productPrice">100€</h3>
-                    </div>
-                    <div class="shippingAccount">
-                        <p class="shippingText">Premium Shipping</p>
-                        <h3 class="shippingPrice">9,99€</h3>
-                    </div>
-                </div>
-                <div class="totalPrice">
-                    <h2>Total</p>
-                    <h2>109,99€</h3>
-                </div>
-                <form>
-                    <button id="buyNowBtn" class="longBtn" disabled>Buy Now!</button>
-                    <input type="checkbox" name="conditions" id="conditions" required>
-                    <label for="conditions" id="checkboxText" class="checkboxText">I've read and accept the terms and conditions</label>
-                </form>
-            </section>
-        </div>
-
-<!-- END OF STEP 4 ------------------------ -->
-</template>
-<template id="template5">
-    <div class='mainDivs' id="lastStepDiv">
-        <section>
-
-        </section>
-        <section>
-
-        </section>
-    </div>
-</template>
     </main>
-
     <footer>
     </footer>
 
     <script src="js/slider.js"></script>
     <script src="js/functions.js"></script>
+    <script type="module">
+        loadComponent('templates/template1.html');
+        loadComponent('templates/template2.html');
+        loadComponent('templates/template3.html');
+        loadComponent('templates/template4.html');
+        loadComponent('templates/template5.html');
+        loadComponent('templates/templateBars.html');
+    </script>
     <!-- <script src="js/formValidations.js"></script> -->
 </body>
 </html>
