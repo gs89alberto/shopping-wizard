@@ -1,0 +1,44 @@
+<template id="template3">
+    <!-- STEP 3 ------------------------ -->
+    
+            <div class="mainDivs" id="step3MainDiv">
+                    <form id="shippingForm" class="profileForm">
+                        <div class="leftContent formInputs">
+                            <h2>Shipping</h2>
+                            <h3>Shipping type</h3>
+                            <div id="radioOptions" class="radioOptions">
+                                <div class="radioOpt">
+                                    <input type="radio" id="opt1" name="shippingType" value="opt1" required>
+                                    <label for="opt1">Free shipment (72H)</label>
+                                </div>
+                                <div class="radioOpt">
+                                    <input type="radio" id="opt2" name="shippingType" value="opt2" required>
+                                    <label for="opt2">Extra shipping (48H) <span>(+4,99€)</span></label>
+                                </div>
+                                <div class="radioOpt">
+                                    <input type="radio" id="opt3" name="shippingType" value="opt3" required>
+                                    <label for="opt3">Premium (24h) <span>(+9,99€)</span></label>
+                                </div>
+                            </div>
+                            
+                            <div class="giftDiv">
+                                <div class="radioOpt">
+                                    <input type="checkbox" name="giftCheckbox" id="giftCheckbox">
+                                    <label for="giftCheckbox">Is it a gift?</label>
+                                </div>
+                                <div id="giftContent" class="giftContent">
+                                    <textarea name="textBox" id="textBox" disabled maxlength="200" placeholder="Gift Message"></textarea>
+                                    <label for="imageInput">Gift wrapper image</label>
+                                    <input type="file" name="imageInput" id="imageInput" accept="image/png, image/jpeg" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightContent ship_rc formSmallBtns">
+                            <button type="reset" id="shipping_clearBtn" class="clearBtn">Clear form</button>
+                            <button type="submit" id="shipping_NextBtn" class="nextBtn">Next</button>
+                        </div>
+                    </form>
+            </div>
+    
+    <!-- END OF STEP 3 ------------------------ -->
+    </template>
