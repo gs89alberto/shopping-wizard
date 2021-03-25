@@ -22,9 +22,24 @@ function setEventSubmitButton(elementId) {
     }
     if (elementId === 'shipping_NextBtn') setGiftCheckboxEvents();
     if (elementId === 'buyNowBtn') setBuyButtonCondition();
-    // if (elementId !== 'addToCartBtn' || elementId !=== 'buyNowBtn') {
-    //     showTimer();
-    // }
+}
+
+function setTopBarStyle(step) {
+    var stepDivId = {
+        '1': 'step1',
+        '2': 'step2',
+        '3': 'step3',
+        '4': 'step4'
+    }
+    var currentStep = stepDivId[step];
+
+    document.getElementById(currentStep).classList.toggle('actualStep');
+    document.getElementById(currentStep).children[0].classList.toggle('completed');
+    document.getElementById(currentStep).children[1].classList.toggle('completedText');
+
+    if (step > 1) {
+        document.getElementById(stepDivId[step-1]).classList.toggle('actualStep');
+    }
 }
 
 function nextStep(event) {
@@ -50,6 +65,9 @@ function nextStep(event) {
     document.body.getElementsByTagName('main')[0].appendChild(clone);
     if (domLists[targetId][2]) {
         setEventSubmitButton(domLists[targetId][2]);
+        setTopBarStyle(domLists[targetId][1]);
+    } else {
+        document.getElementById('topBar')?.remove();
     }
     
 }
