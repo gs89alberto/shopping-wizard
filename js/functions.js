@@ -104,7 +104,7 @@ function nextStep(event) {
         }
     } else {
         clearTimeout(timer);
-        document.getElementById('timeToPurchase').textContent = convertTime(getPurchaseTime()).minutes + ' minutos ' +  convertTime(getPurchaseTime()).seconds + ' seconds';
+        document.getElementById('timeToPurchase').textContent = convertTime(getPurchaseTime()).minutes + ' minutes ' +  convertTime(getPurchaseTime()).seconds + ' seconds';
     }
 }
 
