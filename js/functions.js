@@ -1,3 +1,7 @@
+let timer;
+let milisec;
+let start;
+
 document.getElementById('addToCartBtn').addEventListener('click', nextStep);
 
 function setGiftCheckboxEvents() {
@@ -98,7 +102,9 @@ function nextStep(event) {
         } else {
             document.getElementById('topBar')?.remove();
         }
-    }        
+    } else {
+        clearTimeout(timer);
+    }
 }
 
 function setBuyButtonCondition() {
@@ -653,18 +659,18 @@ function clearLabelAddForms() {
 // END OF ADDRESS FORM VALIDATION -----------------------------
 /* COUNTDOWN FUNCTIONS ------------------------*/
 
-function getPurchaseTime(){
+function getPurchaseTime() {
     var purchaseTime = new Date() - start;
     return purchaseTime
-};
+}
 
-function convertTime(milisec){
+function convertTime(milisec) {
     var minutes = ~~(milisec/60000);
     var seconds = ~~(milisec/1000) - minutes*60;
     return {minutes : minutes, seconds : seconds};
-};
+}
 
-function activatePopUp(){
+function activatePopUp() {
     var popUpDiv = document.querySelector('#popUpDiv');
     popUpDiv.classList.remove('hidden');
 
@@ -675,21 +681,19 @@ function activatePopUp(){
         document.getElementById("hurry").classList.remove('hidden');
     }
     document.getElementById("timerPopUp").innerHTML = (convertTime(remaining).minutes) + " minutes";
-    console.log(getPurchaseTime());
-    console.log(convertTime(remaining).minutes);
 }
 
-function toStep0(){
+function toStep0() {
     document.querySelector('#popUpDiv').setAttribute("hidden","");
     alert("The purchase time has ended. You will be redirected");
     window.location.href = "index.html";
 }
 
-function startCountdown(){
+function startCountdown() {
     milisec = 301000;
     start = new Date();
 
-    setTimeout("toStep0()",milisec);
+    timer = setTimeout("toStep0()",milisec);
     activatePopUp();
     setInterval("activatePopUp()",60000);
-};
+}
