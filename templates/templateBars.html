@@ -30,11 +30,11 @@
         
         <!-- POP UP HURRY UP MESSAGE ---------------------------------- -->
         
-                <div id="popUpDiv" class="popUpDiv hidden">
-                    <p>Your purchase started:</p>
-                    <p id="closeX" class="closeX" onclick="hide()">&#x2715</p>
-                    <h3 id="timerPopUp">3 minutes ago.</h4>
-                    <h2>Hurry Up!</h2>
+                <div id="popUpDiv" class="popUpDiv">
+                    <p>The purchase will end in:</p>
+                    <p class="closeX" onclick="document.getElementById('popUpDiv').classList.add('hidden')">&#x2715</p>
+                    <h3 id="timerPopUp"></h3>
+                    <h2 id="hurry" class="hidden">Hurry Up!</h2>
                 </div>
         
         <!-- END POP UP HURRY UP MESSAGE ---------------------------------- -->
