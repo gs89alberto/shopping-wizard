@@ -178,7 +178,6 @@ let price1;
 let option1;
 let productPrice = document.getElementById("productprice").getAttribute("value");
 let firstPriceText = document.getElementById("productprice").innerHTML;
-firstPriceText = '100 €'
 var selectedRadiobutton = false;
 var shippingType = 0;
 
@@ -205,6 +204,7 @@ function shirtColor(colorS){
         productPrice = 130;
         firstPriceText = '130 €';
     }
+    document.getElementById("productprice").innerHTML = firstPriceText;
 }
 
 //Profile Page Functions
