@@ -47,6 +47,14 @@ function setTopBarStyle(step) {
     }
 }
 
+function hasAllProfileFields() {
+    return (!userNameChecked || !userEmailChecked || !userPasswordChecked || !userPasswordConfirmedChecked);
+}
+
+function hasAllAddressFields() {
+    return (!nameChecked || !lastNameChecked || !birthdayChecked || !addressChecked || !postalCodeChecked || !countryCodeChecked || !countryChecked || !phoneNumberChecked);
+}
+
 function nextStep(event) {
     event.preventDefault();
     
@@ -55,17 +63,16 @@ function nextStep(event) {
         'addToCartBtn': ['step0MainDiv', '1', 'profile_NextBtn'], //idCurrentBtn - currentDiv - next template - next btn
         'profile_NextBtn': ['step1MainDiv', '2', 'address_NextBtn'],
         'address_NextBtn': ['step2MainDiv', '3', 'shipping_NextBtn'],
-        'shipping_NextBtn': ['step3MainDiv', '4', 'buyNowBtn'],
-        // 'buyNowBtn': ['step4MainDiv', '5', null]
+        'shipping_NextBtn': ['step3MainDiv', '4', 'buyNowBtn']
     };
 
 
-    if (targetId === 'profile_NextBtn' && !userNameChecked && !userEmailChecked && !userPasswordChecked && !userPasswordConfirmedChecked) {
+    if (targetId === 'profile_NextBtn' && hasAllProfileFields()) {
         alert('You must fulfill the form correctly before continuing');
         return false;
     }
 
-    if (targetId === 'address_NextBtn' && !nameCheked && !lastNameChecked && !birthdayChecked && !addressChecked && !postalCodeChecked && !countryCodeChecked && !countryChecked && !phoneNumberChecked) {
+    if (targetId === 'address_NextBtn' && hasAllAddressFields()) {
         alert ('You must fulfill the form correctly before continuing');
         return false;
     }
@@ -74,22 +81,23 @@ function nextStep(event) {
         alert('You must select a shipping type before continuing');
         return false;
     }
-    
-    document.getElementById(domLists[targetId][0]).remove();
-    if (targetId === 'addToCartBtn') {
-        var templateBars = document.querySelector('#bars');
-        var cloneBars =  templateBars.content.cloneNode(true);
-        document.body.getElementsByTagName('main')[0].appendChild(cloneBars);
-    }
-    var template = document.querySelector('#template' + domLists[targetId][1]);
-    var clone =  template.content.cloneNode(true);
-    document.body.getElementsByTagName('main')[0].appendChild(clone);
-    if (domLists[targetId][2]) {
-        setEventSubmitButton(domLists[targetId][2]);
-        setTopBarStyle(domLists[targetId][1]);
-    } else {
-        document.getElementById('topBar')?.remove();
-    }    
+    if (targetId !== 'buyNowBtn') {
+        document.getElementById(domLists[targetId][0]).remove();
+        if (targetId === 'addToCartBtn') {
+            var templateBars = document.querySelector('#bars');
+            var cloneBars =  templateBars.content.cloneNode(true);
+            document.body.getElementsByTagName('main')[0].appendChild(cloneBars);
+        }
+        var template = document.querySelector('#template' + domLists[targetId][1]);
+        var clone =  template.content.cloneNode(true);
+        document.body.getElementsByTagName('main')[0].appendChild(clone);
+        if (domLists[targetId][2]) {
+            setEventSubmitButton(domLists[targetId][2]);
+            setTopBarStyle(domLists[targetId][1]);
+        } else {
+            document.getElementById('topBar')?.remove();
+        }
+    }        
 }
 
 function setBuyButtonCondition() {
@@ -208,17 +216,17 @@ function profileData(){
 
 //Adress Page Functions
 function adressData(){
-    firstName = document.getElementById("firstName").value;
-    lastName = document.getElementById("lastName").value;
-    birthday = document.getElementById("birthday").value;
-    adress1 = document.getElementById("adress1").value;
-    adress2 = document.getElementById("adress2").value;
-    postalCode = document.getElementById("postalCode").value;
-    country = document.getElementById("country").value; 
-    prefix = document.getElementById("prefix").value;
-    telephone = document.getElementById("telephone").value;
+    firstName = document.getElementById("firstName")?.value;
+    lastName = document.getElementById("lastName")?.value;
+    birthday = document.getElementById("birthday")?.value;
+    adress1 = document.getElementById("adress1")?.value;
+    adress2 = document.getElementById("adress2")?.value;
+    postalCode = document.getElementById("postalCode")?.value;
+    country = document.getElementById("country")?.value; 
+    prefix = document.getElementById("prefix")?.value;
+    telephone = document.getElementById("telephone")?.value;
     let regularAdress = document.getElementById("checkItem");
-        if(regularAdress.checked){
+        if(regularAdress && regularAdress.checked){
             regularAdressConfirm = true;
         }
     };
@@ -266,7 +274,7 @@ function changePage(){
 
 let pattUserName = /^[A-Za-z0-9 ]{5,}$/;
 let pattEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-let pattPswd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-._/\¡¿?!]).{8,}$/;
+let pattPswd = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
 
 let userNameErr = 'The user name must have from 5 to 20 characters.';
 let emailErr = 'Please, insert a valid E-mail.'
@@ -411,21 +419,21 @@ function clearLabelForms() {
 
 // VALIDATION ADDRESS FORM -------------------------
 
-let pattAddressUserName = /^[A-Za-z0-9 ]{5,}$/;
+let pattAddressUserName = /^[A-Za-z0-9 ]{,20}$/;
 let pattBirthday = /^([0-9]{4})\/([0-9]{2})\/([0-9]{2})$/;
 let pattAddAddressOne = /^\s*\S+(?:\s+\S+){2}/;
 let pattAddPC = /^([0-9]{5})$/;
 let pattAddPhone = /^\+?([(0-9)]{2,3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
 
-let addFirstNameErr = 'The first name must have from 5 to 20 characters.';
-let addLastNameErr = 'The last name must have from 5 to 20 characters.';
+let addFirstNameErr = 'The first name must have less than 20 characters.';
+let addLastNameErr = 'The last name must have less than 20 characters.';
 let addBirthdErr = 'Please insert a valid date.';
 let addAddressErr = 'Please insert a valid address.';
 let addPostalCErr = 'The Postal Code must have 5 digits.';
 let addCountryErr = 'Please select a country.';
 let addPhoneErr = 'Please insert a valid phone number. The format must be: +XX XXX XXX XXX';
 
-let nameCheked = false;
+let nameChecked = false;
 let lastNameChecked = false;
 let birthdayChecked = false;
 let addressChecked = false;
@@ -442,7 +450,7 @@ function checkName() {
         addFirstNameVal.classList.remove('invalidForm', 'validForm');
         lAName.classList.remove('labelFormValidationStyle');
     }   else {
-        if (!pattAddressUserName.test(addFirstNameVal.value)) {
+        if (!addFirstNameVal.checkValidity()) {
             addFirstNameVal.classList.add('invalidForm');
             lAName.classList.add('labelFormValidationStyle');
             lAName.innerHTML = addFirstNameErr;
@@ -451,7 +459,7 @@ function checkName() {
             addFirstNameVal.classList.remove('invalidForm');
             lAName.innerHTML = '';
             addFirstNameVal.classList.add('validForm');
-            nameCheked = true;
+            nameChecked = true;
         }
     }
 }
@@ -464,7 +472,7 @@ function checkLastName() {
         addLastNameVal.classList.remove('invalidForm', 'validForm');
         lALName.classList.remove('labelFormValidationStyle');
     }   else {
-        if (!pattAddressUserName.test(addLastNameVal.value)) {
+        if (!addLastNameVal.checkValidity()) {
             addLastNameVal.classList.add('invalidForm');
             lALName.classList.add('labelFormValidationStyle');
             lALName.innerHTML = addLastNameErr;
@@ -502,7 +510,7 @@ function checkAddress() {
         addAddressVal.classList.remove('invalidForm', 'validForm');
         lAAdd.classList.remove('labelFormValidationStyle');
     }   else {
-        if (!pattAddAddressOne.test(addAddressVal.value)) {
+        if (!addAddressVal.checkValidity()) {
             addAddressVal.classList.add('invalidForm');
             lAAdd.classList.add('labelFormValidationStyle');
             lAAdd.innerHTML = addAddressErr;
