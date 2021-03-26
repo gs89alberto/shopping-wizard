@@ -22,9 +22,7 @@ function setEventSubmitButton(elementId) {
     }
     if (elementId === 'shipping_NextBtn') setGiftCheckboxEvents();
     if (elementId === 'buyNowBtn') setBuyButtonCondition();
-    // if (elementId !== 'addToCartBtn' || elementId !=== 'buyNowBtn') {
-    //     showTimer();
-    // }
+    if (elementId === 'profile_NextBtn') startCountdown();
 }
 
 function nextStep(event) {
@@ -60,13 +58,6 @@ function setBuyButtonCondition() {
     });
 }
 
-
-const popUpDiv = document.querySelector('#popUpDiv');
-
-function hide() {
-    popUpDiv.classList.toggle('hidden');
-};
-
 function loadComponent (file) {
     return new Promise ((resolve, reject) => {
       fetch (file)
@@ -96,3 +87,46 @@ function loadComponent (file) {
         .catch (reject);
     });
   }
+
+/* COUNTDOWN FUNCTIONS ------------------------*/
+
+function getPurchaseTime(){
+    var purchaseTime = new Date() - start;
+    return purchaseTime
+};
+
+function convertTime(milisec){
+    var minutes = ~~(milisec/60000);
+    var seconds = ~~(milisec/1000) - minutes*60;
+    return {minutes : minutes, seconds : seconds};
+};
+
+function activatePopUp(){
+    var popUpDiv = document.querySelector('#popUpDiv');
+    popUpDiv.classList.remove('hidden');
+
+    window.setTimeout("popUpDiv.classList.add('hidden')",5000);
+
+    var remaining = milisec - getPurchaseTime();
+    if (convertTime(remaining).minutes <= 2){
+        document.getElementById("hurry").classList.remove('hidden');
+    }
+    document.getElementById("timerPopUp").innerHTML = (convertTime(remaining).minutes) + " minutes";
+    console.log(getPurchaseTime());
+    console.log(convertTime(remaining).minutes);
+}
+
+function toStep0(){
+    document.querySelector('#popUpDiv').setAttribute("hidden","");
+    alert("The purchase time has ended. You will be redirected");
+    window.location.href = "index.html";
+}
+
+function startCountdown(){
+    milisec = 301000;
+    start = new Date();
+
+    setTimeout("toStep0()",milisec);
+    activatePopUp();
+    setInterval("activatePopUp()",60000);
+};
